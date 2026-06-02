@@ -33,4 +33,28 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get language => 'Dil';
+
+  @override
+  String get login => 'Giriş Yap';
+
+  @override
+  String get email => 'E-posta';
+
+  @override
+  String get password => 'Şifre';
+
+  @override
+  String get emailRequired => 'E-posta zorunludur';
+
+  @override
+  String get passwordRequired => 'Şifre zorunludur';
+
+  @override
+  String get loginError => 'Giriş başarısız. E-posta veya şifre hatalı.';
+
+  @override
+  String get logout => 'Çıkış Yap';
+
+  @override
+  String get logoutConfirmTitle => 'Çıkış yapmak istediğinizden emin misiniz?';
 }

@@ -1,3 +1,20 @@
+## ⚡ Her Konuşmada İlk Adım (ZORUNLU)
+
+Yeni bir konuşma başladığında — faz, görev veya soru ne olursa olsun —
+**ilk eylem olarak** şu üç dosyayı oku:
+
+1. `CLAUDE.md` (bu dosya)
+2. `docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md`
+3. `PROGRESS.md`
+
+Okumadan hiçbir kod yazma, araç çağırma veya planlama yapma.
+
+Okuma tamamlandıktan sonra:
+2. `superpowers:executing-plans` ile adım adım ilerle
+3. Her adım bitmeden `superpowers:verification-before-completion` çağır
+
+Bu adımları atlamak yasaktır.
+
 # Gilanlı Köy Meyhanesi — Muhasebe Uygulaması
 
 ## Proje Özeti

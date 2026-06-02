@@ -145,6 +145,54 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Dil'**
   String get language;
+
+  /// Login butonu ve ekran başlığı
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş Yap'**
+  String get login;
+
+  /// E-posta alanı etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta'**
+  String get email;
+
+  /// Şifre alanı etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifre'**
+  String get password;
+
+  /// E-posta boş bırakıldığında hata
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta zorunludur'**
+  String get emailRequired;
+
+  /// Şifre boş bırakıldığında hata
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifre zorunludur'**
+  String get passwordRequired;
+
+  /// Hatalı kimlik bilgisi snackbar mesajı
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş başarısız. E-posta veya şifre hatalı.'**
+  String get loginError;
+
+  /// Çıkış butonu
+  ///
+  /// In tr, this message translates to:
+  /// **'Çıkış Yap'**
+  String get logout;
+
+  /// Çıkış onay dialog başlığı
+  ///
+  /// In tr, this message translates to:
+  /// **'Çıkış yapmak istediğinizden emin misiniz?'**
+  String get logoutConfirmTitle;
 }
 
 class _AppLocalizationsDelegate

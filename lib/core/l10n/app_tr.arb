@@ -18,5 +18,21 @@
   "confirm": "Onayla",
   "saveConfirmTitle": "Kaydetmek istediğinizden emin misiniz?",
   "settings": "Ayarlar",
-  "language": "Dil"
+  "language": "Dil",
+  "login": "Giriş Yap",
+  "@login": { "description": "Login butonu ve ekran başlığı" },
+  "email": "E-posta",
+  "@email": { "description": "E-posta alanı etiketi" },
+  "password": "Şifre",
+  "@password": { "description": "Şifre alanı etiketi" },
+  "emailRequired": "E-posta zorunludur",
+  "@emailRequired": { "description": "E-posta boş bırakıldığında hata" },
+  "passwordRequired": "Şifre zorunludur",
+  "@passwordRequired": { "description": "Şifre boş bırakıldığında hata" },
+  "loginError": "Giriş başarısız. E-posta veya şifre hatalı.",
+  "@loginError": { "description": "Hatalı kimlik bilgisi snackbar mesajı" },
+  "logout": "Çıkış Yap",
+  "@logout": { "description": "Çıkış butonu" },
+  "logoutConfirmTitle": "Çıkış yapmak istediğinizden emin misiniz?",
+  "@logoutConfirmTitle": { "description": "Çıkış onay dialog başlığı" }
 }

@@ -1,14 +1,40 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/auth/application/auth_providers.dart';
+import '../features/auth/presentation/login_screen.dart';
 import 'placeholder_home_screen.dart';
 
-/// Uygulama yönlendiricisi. Faz 2'de auth guard (oturum yoksa /login) eklenecek.
-final GoRouter appRouter = GoRouter(
-  initialLocation: '/',
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const PlaceholderHomeScreen(),
-    ),
-  ],
-);
+final routerProvider = Provider<GoRouter>((ref) {
+  final router = GoRouter(
+    initialLocation: '/',
+    redirect: (context, state) {
+      final authState = ref.read(authStateChangesProvider);
+
+      // Henüz yükleniyorsa yönlendirme yapma
+      if (authState.isLoading) return null;
+
+      final isLoggedIn = authState.asData?.value != null;
+      final isOnLogin = state.matchedLocation == '/login';
+
+      if (!isLoggedIn && !isOnLogin) return '/login';
+      if (isLoggedIn && isOnLogin) return '/';
+      return null;
+    },
+    routes: [
+      GoRoute(
+        path: '/login',
+        builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
+        path: '/',
+        builder: (context, state) => const PlaceholderHomeScreen(),
+      ),
+    ],
+  );
+
+  ref.listen(authStateChangesProvider, (prev, next) => router.refresh());
+  ref.onDispose(router.dispose);
+
+  return router;
+});
