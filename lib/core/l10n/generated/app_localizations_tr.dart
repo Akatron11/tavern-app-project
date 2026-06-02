@@ -206,4 +206,79 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get openDailyRecord => 'Günlük Kayıt';
+
+  @override
+  String get creditBook => 'Veresiye Defteri';
+
+  @override
+  String get addCreditSale => 'Veresiye Ekle';
+
+  @override
+  String get editCreditSale => 'Veresiyeyi Düzenle';
+
+  @override
+  String get creditTotalAmount => 'Toplam Tutar (₺)';
+
+  @override
+  String get creditTotalAmountRequired => 'Toplam tutar zorunludur';
+
+  @override
+  String get creditTotalAmountInvalid => 'Geçerli bir tutar giriniz';
+
+  @override
+  String get creditRemainingAmount => 'Kalan';
+
+  @override
+  String get creditStatusPending => 'Bekliyor';
+
+  @override
+  String get creditStatusPartial => 'Kısmi Ödendi';
+
+  @override
+  String get creditStatusPaid => 'Ödendi';
+
+  @override
+  String get addPayment => 'Ödeme Ekle';
+
+  @override
+  String get paymentAmount => 'Ödeme Tutarı (₺)';
+
+  @override
+  String get paymentAmountRequired => 'Ödeme tutarı zorunludur';
+
+  @override
+  String get paymentAmountInvalid => 'Geçerli bir tutar giriniz';
+
+  @override
+  String get paymentAmountExceedsRemaining =>
+      'Ödeme tutarı kalandan fazla olamaz';
+
+  @override
+  String get markAsPaid => 'Ödendi';
+
+  @override
+  String get undoPaid => 'Geri Al';
+
+  @override
+  String get undoPaidConfirmTitle =>
+      'Bu ödemeyi geri almak istediğinizden emin misiniz?';
+
+  @override
+  String get markAsPaidConfirmTitle =>
+      'Tüm bakiyeyi ödenmiş olarak işaretlemek istiyor musunuz?';
+
+  @override
+  String get creditSaleAdded => 'Veresiye kaydedildi.';
+
+  @override
+  String get creditSaleUpdated => 'Veresiye güncellendi.';
+
+  @override
+  String get paymentAdded => 'Ödeme kaydedildi.';
+
+  @override
+  String get noCreditSales => 'Henüz veresiye kaydı yok.';
+
+  @override
+  String get openCreditBook => 'Veresiye Defteri';
 }

@@ -481,6 +481,150 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Günlük Kayıt'**
   String get openDailyRecord;
+
+  /// Veresiye defteri ekranı başlığı ve menü
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiye Defteri'**
+  String get creditBook;
+
+  /// No description provided for @addCreditSale.
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiye Ekle'**
+  String get addCreditSale;
+
+  /// No description provided for @editCreditSale.
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiyeyi Düzenle'**
+  String get editCreditSale;
+
+  /// No description provided for @creditTotalAmount.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Tutar (₺)'**
+  String get creditTotalAmount;
+
+  /// No description provided for @creditTotalAmountRequired.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam tutar zorunludur'**
+  String get creditTotalAmountRequired;
+
+  /// No description provided for @creditTotalAmountInvalid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Geçerli bir tutar giriniz'**
+  String get creditTotalAmountInvalid;
+
+  /// No description provided for @creditRemainingAmount.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kalan'**
+  String get creditRemainingAmount;
+
+  /// No description provided for @creditStatusPending.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bekliyor'**
+  String get creditStatusPending;
+
+  /// No description provided for @creditStatusPartial.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kısmi Ödendi'**
+  String get creditStatusPartial;
+
+  /// No description provided for @creditStatusPaid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödendi'**
+  String get creditStatusPaid;
+
+  /// No description provided for @addPayment.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödeme Ekle'**
+  String get addPayment;
+
+  /// No description provided for @paymentAmount.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödeme Tutarı (₺)'**
+  String get paymentAmount;
+
+  /// No description provided for @paymentAmountRequired.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödeme tutarı zorunludur'**
+  String get paymentAmountRequired;
+
+  /// No description provided for @paymentAmountInvalid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Geçerli bir tutar giriniz'**
+  String get paymentAmountInvalid;
+
+  /// No description provided for @paymentAmountExceedsRemaining.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödeme tutarı kalandan fazla olamaz'**
+  String get paymentAmountExceedsRemaining;
+
+  /// No description provided for @markAsPaid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödendi'**
+  String get markAsPaid;
+
+  /// No description provided for @undoPaid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Geri Al'**
+  String get undoPaid;
+
+  /// No description provided for @undoPaidConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu ödemeyi geri almak istediğinizden emin misiniz?'**
+  String get undoPaidConfirmTitle;
+
+  /// No description provided for @markAsPaidConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm bakiyeyi ödenmiş olarak işaretlemek istiyor musunuz?'**
+  String get markAsPaidConfirmTitle;
+
+  /// No description provided for @creditSaleAdded.
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiye kaydedildi.'**
+  String get creditSaleAdded;
+
+  /// No description provided for @creditSaleUpdated.
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiye güncellendi.'**
+  String get creditSaleUpdated;
+
+  /// No description provided for @paymentAdded.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödeme kaydedildi.'**
+  String get paymentAdded;
+
+  /// No description provided for @noCreditSales.
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz veresiye kaydı yok.'**
+  String get noCreditSales;
+
+  /// No description provided for @openCreditBook.
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiye Defteri'**
+  String get openCreditBook;
 }
 
 class _AppLocalizationsDelegate

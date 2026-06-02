@@ -208,4 +208,78 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get openDailyRecord => 'Daily Record';
+
+  @override
+  String get creditBook => 'Credit Book';
+
+  @override
+  String get addCreditSale => 'Add Credit Sale';
+
+  @override
+  String get editCreditSale => 'Edit Credit Sale';
+
+  @override
+  String get creditTotalAmount => 'Total Amount (₺)';
+
+  @override
+  String get creditTotalAmountRequired => 'Total amount is required';
+
+  @override
+  String get creditTotalAmountInvalid => 'Enter a valid amount';
+
+  @override
+  String get creditRemainingAmount => 'Remaining';
+
+  @override
+  String get creditStatusPending => 'Pending';
+
+  @override
+  String get creditStatusPartial => 'Partially Paid';
+
+  @override
+  String get creditStatusPaid => 'Paid';
+
+  @override
+  String get addPayment => 'Add Payment';
+
+  @override
+  String get paymentAmount => 'Payment Amount (₺)';
+
+  @override
+  String get paymentAmountRequired => 'Payment amount is required';
+
+  @override
+  String get paymentAmountInvalid => 'Enter a valid amount';
+
+  @override
+  String get paymentAmountExceedsRemaining =>
+      'Payment cannot exceed remaining balance';
+
+  @override
+  String get markAsPaid => 'Mark as Paid';
+
+  @override
+  String get undoPaid => 'Undo';
+
+  @override
+  String get undoPaidConfirmTitle =>
+      'Are you sure you want to undo this payment?';
+
+  @override
+  String get markAsPaidConfirmTitle => 'Mark full balance as paid?';
+
+  @override
+  String get creditSaleAdded => 'Credit sale saved.';
+
+  @override
+  String get creditSaleUpdated => 'Credit sale updated.';
+
+  @override
+  String get paymentAdded => 'Payment recorded.';
+
+  @override
+  String get noCreditSales => 'No credit sales yet.';
+
+  @override
+  String get openCreditBook => 'Credit Book';
 }
