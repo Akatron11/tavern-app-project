@@ -34,5 +34,39 @@
   "logout": "Çıkış Yap",
   "@logout": { "description": "Çıkış butonu" },
   "logoutConfirmTitle": "Çıkış yapmak istediğinizden emin misiniz?",
-  "@logoutConfirmTitle": { "description": "Çıkış onay dialog başlığı" }
+  "@logoutConfirmTitle": { "description": "Çıkış onay dialog başlığı" },
+
+  "staff": "Personel",
+  "@staff": { "description": "Personel menü başlığı" },
+  "staffList": "Personel Listesi",
+  "addStaff": "Personel Ekle",
+  "editStaff": "Personel Düzenle",
+  "staffName": "Ad Soyad",
+  "staffNameRequired": "Ad Soyad zorunludur",
+  "staffRole": "Rol",
+  "dailyWage": "Günlük Ücret (₺)",
+  "dailyWageRequired": "Günlük ücret zorunludur",
+  "dailyWageInvalid": "Geçerli bir ücret giriniz",
+  "isActive": "Aktif",
+  "deactivate": "Pasife Al",
+  "deactivateConfirmTitle": "Bu personeli pasife almak istediğinizden emin misiniz?",
+  "deactivateConfirmBody": "Pasif personel yeni kayıtlarda görünmez. Geçmiş kayıtlar etkilenmez.",
+  "deleteStaff": "Personeli Sil",
+  "deleteStaffConfirmTitle": "Bu personeli silmek istediğinizden emin misiniz?",
+  "deleteStaffConfirmBody": "Bu işlem geri alınamaz.",
+  "wageHistory": "Ücret Geçmişi",
+  "noStaff": "Henüz personel eklenmemiş.",
+  "wageUpdated": "Ücret güncellendi — {date} tarihinden itibaren geçerli.",
+  "@wageUpdated": {
+    "placeholders": {
+      "date": { "type": "String" }
+    }
+  },
+  "roleGarson": "Garson",
+  "roleAsci": "Aşçı",
+  "roleBarmen": "Barmen",
+  "roleKasiyer": "Kasiyer",
+  "roleDiger": "Diğer",
+  "active": "Aktif",
+  "inactive": "Pasif"
 }

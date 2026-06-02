@@ -58,4 +58,90 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get logoutConfirmTitle => 'Are you sure you want to logout?';
+
+  @override
+  String get staff => 'Staff';
+
+  @override
+  String get staffList => 'Staff List';
+
+  @override
+  String get addStaff => 'Add Staff';
+
+  @override
+  String get editStaff => 'Edit Staff';
+
+  @override
+  String get staffName => 'Full Name';
+
+  @override
+  String get staffNameRequired => 'Full name is required';
+
+  @override
+  String get staffRole => 'Role';
+
+  @override
+  String get dailyWage => 'Daily Wage (₺)';
+
+  @override
+  String get dailyWageRequired => 'Daily wage is required';
+
+  @override
+  String get dailyWageInvalid => 'Please enter a valid wage';
+
+  @override
+  String get isActive => 'Active';
+
+  @override
+  String get deactivate => 'Deactivate';
+
+  @override
+  String get deactivateConfirmTitle =>
+      'Are you sure you want to deactivate this staff member?';
+
+  @override
+  String get deactivateConfirmBody =>
+      'Inactive staff won\'t appear in new records. Past records are unaffected.';
+
+  @override
+  String get deleteStaff => 'Delete Staff';
+
+  @override
+  String get deleteStaffConfirmTitle =>
+      'Are you sure you want to delete this staff member?';
+
+  @override
+  String get deleteStaffConfirmBody => 'This action cannot be undone.';
+
+  @override
+  String get wageHistory => 'Wage History';
+
+  @override
+  String get noStaff => 'No staff members added yet.';
+
+  @override
+  String wageUpdated(String date) {
+    return 'Wage updated — effective from $date.';
+  }
+
+  @override
+  String get roleGarson => 'Waiter';
+
+  @override
+  String get roleAsci => 'Chef';
+
+  @override
+  String get roleBarmen => 'Bartender';
+
+  @override
+  String get roleKasiyer => 'Cashier';
+
+  @override
+  String get roleDiger => 'Other';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get inactive => 'Inactive';
 }

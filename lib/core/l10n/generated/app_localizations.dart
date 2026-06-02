@@ -193,6 +193,168 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Çıkış yapmak istediğinizden emin misiniz?'**
   String get logoutConfirmTitle;
+
+  /// Personel menü başlığı
+  ///
+  /// In tr, this message translates to:
+  /// **'Personel'**
+  String get staff;
+
+  /// No description provided for @staffList.
+  ///
+  /// In tr, this message translates to:
+  /// **'Personel Listesi'**
+  String get staffList;
+
+  /// No description provided for @addStaff.
+  ///
+  /// In tr, this message translates to:
+  /// **'Personel Ekle'**
+  String get addStaff;
+
+  /// No description provided for @editStaff.
+  ///
+  /// In tr, this message translates to:
+  /// **'Personel Düzenle'**
+  String get editStaff;
+
+  /// No description provided for @staffName.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ad Soyad'**
+  String get staffName;
+
+  /// No description provided for @staffNameRequired.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ad Soyad zorunludur'**
+  String get staffNameRequired;
+
+  /// No description provided for @staffRole.
+  ///
+  /// In tr, this message translates to:
+  /// **'Rol'**
+  String get staffRole;
+
+  /// No description provided for @dailyWage.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük Ücret (₺)'**
+  String get dailyWage;
+
+  /// No description provided for @dailyWageRequired.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük ücret zorunludur'**
+  String get dailyWageRequired;
+
+  /// No description provided for @dailyWageInvalid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Geçerli bir ücret giriniz'**
+  String get dailyWageInvalid;
+
+  /// No description provided for @isActive.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aktif'**
+  String get isActive;
+
+  /// No description provided for @deactivate.
+  ///
+  /// In tr, this message translates to:
+  /// **'Pasife Al'**
+  String get deactivate;
+
+  /// No description provided for @deactivateConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu personeli pasife almak istediğinizden emin misiniz?'**
+  String get deactivateConfirmTitle;
+
+  /// No description provided for @deactivateConfirmBody.
+  ///
+  /// In tr, this message translates to:
+  /// **'Pasif personel yeni kayıtlarda görünmez. Geçmiş kayıtlar etkilenmez.'**
+  String get deactivateConfirmBody;
+
+  /// No description provided for @deleteStaff.
+  ///
+  /// In tr, this message translates to:
+  /// **'Personeli Sil'**
+  String get deleteStaff;
+
+  /// No description provided for @deleteStaffConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu personeli silmek istediğinizden emin misiniz?'**
+  String get deleteStaffConfirmTitle;
+
+  /// No description provided for @deleteStaffConfirmBody.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu işlem geri alınamaz.'**
+  String get deleteStaffConfirmBody;
+
+  /// No description provided for @wageHistory.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ücret Geçmişi'**
+  String get wageHistory;
+
+  /// No description provided for @noStaff.
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz personel eklenmemiş.'**
+  String get noStaff;
+
+  /// No description provided for @wageUpdated.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ücret güncellendi — {date} tarihinden itibaren geçerli.'**
+  String wageUpdated(String date);
+
+  /// No description provided for @roleGarson.
+  ///
+  /// In tr, this message translates to:
+  /// **'Garson'**
+  String get roleGarson;
+
+  /// No description provided for @roleAsci.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aşçı'**
+  String get roleAsci;
+
+  /// No description provided for @roleBarmen.
+  ///
+  /// In tr, this message translates to:
+  /// **'Barmen'**
+  String get roleBarmen;
+
+  /// No description provided for @roleKasiyer.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kasiyer'**
+  String get roleKasiyer;
+
+  /// No description provided for @roleDiger.
+  ///
+  /// In tr, this message translates to:
+  /// **'Diğer'**
+  String get roleDiger;
+
+  /// No description provided for @active.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aktif'**
+  String get active;
+
+  /// No description provided for @inactive.
+  ///
+  /// In tr, this message translates to:
+  /// **'Pasif'**
+  String get inactive;
 }
 
 class _AppLocalizationsDelegate

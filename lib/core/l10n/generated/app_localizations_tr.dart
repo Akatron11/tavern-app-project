@@ -57,4 +57,90 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get logoutConfirmTitle => 'Çıkış yapmak istediğinizden emin misiniz?';
+
+  @override
+  String get staff => 'Personel';
+
+  @override
+  String get staffList => 'Personel Listesi';
+
+  @override
+  String get addStaff => 'Personel Ekle';
+
+  @override
+  String get editStaff => 'Personel Düzenle';
+
+  @override
+  String get staffName => 'Ad Soyad';
+
+  @override
+  String get staffNameRequired => 'Ad Soyad zorunludur';
+
+  @override
+  String get staffRole => 'Rol';
+
+  @override
+  String get dailyWage => 'Günlük Ücret (₺)';
+
+  @override
+  String get dailyWageRequired => 'Günlük ücret zorunludur';
+
+  @override
+  String get dailyWageInvalid => 'Geçerli bir ücret giriniz';
+
+  @override
+  String get isActive => 'Aktif';
+
+  @override
+  String get deactivate => 'Pasife Al';
+
+  @override
+  String get deactivateConfirmTitle =>
+      'Bu personeli pasife almak istediğinizden emin misiniz?';
+
+  @override
+  String get deactivateConfirmBody =>
+      'Pasif personel yeni kayıtlarda görünmez. Geçmiş kayıtlar etkilenmez.';
+
+  @override
+  String get deleteStaff => 'Personeli Sil';
+
+  @override
+  String get deleteStaffConfirmTitle =>
+      'Bu personeli silmek istediğinizden emin misiniz?';
+
+  @override
+  String get deleteStaffConfirmBody => 'Bu işlem geri alınamaz.';
+
+  @override
+  String get wageHistory => 'Ücret Geçmişi';
+
+  @override
+  String get noStaff => 'Henüz personel eklenmemiş.';
+
+  @override
+  String wageUpdated(String date) {
+    return 'Ücret güncellendi — $date tarihinden itibaren geçerli.';
+  }
+
+  @override
+  String get roleGarson => 'Garson';
+
+  @override
+  String get roleAsci => 'Aşçı';
+
+  @override
+  String get roleBarmen => 'Barmen';
+
+  @override
+  String get roleKasiyer => 'Kasiyer';
+
+  @override
+  String get roleDiger => 'Diğer';
+
+  @override
+  String get active => 'Aktif';
+
+  @override
+  String get inactive => 'Pasif';
 }

@@ -15,5 +15,38 @@
   "passwordRequired": "Password is required",
   "loginError": "Login failed. Please check your email and password.",
   "logout": "Logout",
-  "logoutConfirmTitle": "Are you sure you want to logout?"
+  "logoutConfirmTitle": "Are you sure you want to logout?",
+
+  "staff": "Staff",
+  "staffList": "Staff List",
+  "addStaff": "Add Staff",
+  "editStaff": "Edit Staff",
+  "staffName": "Full Name",
+  "staffNameRequired": "Full name is required",
+  "staffRole": "Role",
+  "dailyWage": "Daily Wage (₺)",
+  "dailyWageRequired": "Daily wage is required",
+  "dailyWageInvalid": "Please enter a valid wage",
+  "isActive": "Active",
+  "deactivate": "Deactivate",
+  "deactivateConfirmTitle": "Are you sure you want to deactivate this staff member?",
+  "deactivateConfirmBody": "Inactive staff won't appear in new records. Past records are unaffected.",
+  "deleteStaff": "Delete Staff",
+  "deleteStaffConfirmTitle": "Are you sure you want to delete this staff member?",
+  "deleteStaffConfirmBody": "This action cannot be undone.",
+  "wageHistory": "Wage History",
+  "noStaff": "No staff members added yet.",
+  "wageUpdated": "Wage updated — effective from {date}.",
+  "@wageUpdated": {
+    "placeholders": {
+      "date": { "type": "String" }
+    }
+  },
+  "roleGarson": "Waiter",
+  "roleAsci": "Chef",
+  "roleBarmen": "Bartender",
+  "roleKasiyer": "Cashier",
+  "roleDiger": "Other",
+  "active": "Active",
+  "inactive": "Inactive"
 }

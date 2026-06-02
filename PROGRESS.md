@@ -1,7 +1,7 @@
 # Gilanlı Köy Meyhanesi — PROGRESS
 
 **Son güncelleme:** 2026-06-02
-**Aktif faz:** Faz 3 — Personel (Staff) — başlamaya hazır
+**Aktif faz:** Faz 4 — Günlük Kayıt — başlamaya hazır
 **Branch:** main (Faz 0–2 birleştirildi)
 **Plan:** [docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md](docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md)
 
@@ -14,8 +14,7 @@
 - [x] **Faz 0 — Temel & Çekirdek** ✅ tamam (28 test, analyze temiz)
 - [x] **Faz 1 — Firebase Kurulumu** ✅ kod tam; kimlikli smoke testi Faz 2 başında (Kemal hesabı + login)
 - [x] **Faz 2 — Auth (Login)** ✅ tamam (31 test, analyze temiz)
-- [ ] Faz 3 — Personel
-- [ ] Faz 3 — Personel
+- [x] **Faz 3 — Personel** ✅ tamam (37 test, analyze temiz)
 - [ ] Faz 4 — Günlük Kayıt
 - [ ] Faz 5 — Veresiye Defteri
 - [ ] Faz 6 — Ödemeler
@@ -58,3 +57,4 @@
 - **2026-06-02** — Faz 1: Firebase projesi `gilanli-meyhane` oluşturuldu. Android uygulaması + Firestore + Auth (email/password) init. `flutterfire configure` → `firebase_options.dart` üretildi. `main.dart` Firebase+tz init ile güncellendi. `firebase_providers.dart` oluşturuldu. Güvenlik kuralları (`request.auth != null`) deploy edildi. **Kalan:** Firebase Console'dan Kemal hesabı oluşturulacak.
 - **2026-06-02** — ✅ **Faz 1 VERIFICATION**: `flutter test` 28/28 yeşil, `flutter analyze` 0 issue, `firestore.rules` canlı deploy doğrulandı (MCP). Kimliksiz erişim kurallarla reddediliyor ✅. Kimlikli smoke testi Faz 2 başında yapılacak (Kemal hesabı + login ekranı gerekiyor). Faz 1 KOD KABUL.
 - **2026-06-02** — ✅ **Faz 2 KABUL**: AuthRepository + FirebaseAuthRepository + MockAuthRepository + auth_providers (LoginController, LogoutController) + login_screen.dart + router auth guard + çıkış onay dialog'u + 3 widget testi. `flutter test` 31/31 yeşil, `flutter analyze` 0 issue.
+- **2026-06-02** — ✅ **Faz 3 KABUL**: Staff model (Role enum + WageHistoryEntry + equatable) + TDD WageResolver (6 test, §3.2) + StaffRepository/Firestore/Mock + staff_providers (ekle/güncelle/pasifle/sil) + StaffListScreen + StaffFormScreen + confirm_dialog.dart (shared) + router /staff rotası + ARB TR/EN string'leri. `flutter test` 37/37 yeşil, `flutter analyze` 0 issue.
