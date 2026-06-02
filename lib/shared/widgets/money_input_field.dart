@@ -11,12 +11,14 @@ class MoneyInputField extends StatelessWidget {
     required this.controller,
     required this.label,
     this.onChanged,
+    this.validator,
     this.textInputAction = TextInputAction.next,
   });
 
   final TextEditingController controller;
   final String label;
   final ValueChanged<String>? onChanged;
+  final String? Function(String?)? validator;
   final TextInputAction textInputAction;
 
   /// Alandaki tam lira değerini kuruşa çevirir (boş/eksikse 0).
@@ -34,6 +36,7 @@ class MoneyInputField extends StatelessWidget {
       keyboardType: const TextInputType.numberWithOptions(decimal: false),
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       textInputAction: textInputAction,
+      validator: validator,
       onChanged: onChanged,
     );
   }
