@@ -2,7 +2,7 @@
 
 **Son güncelleme:** 2026-06-02
 **Aktif faz:** Faz 0 — Temel & Çekirdek
-**Branch:** (kurulacak)
+**Branch:** phase-0-foundation
 **Plan:** [docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md](docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md)
 
 > Bu dosya her adım sonrası güncellenir.
@@ -28,17 +28,17 @@
 
 ## Faz 0 — Adımlar
 
-- [ ] flutter create iskelet (project-name `gilanli_meyhane`, android) + örnek kod temizliği
-- [ ] pubspec.yaml bağımlılıkları + `flutter pub get`
-- [ ] analysis_options.yaml + .gitignore + `git init` + ilk commit + çalışma dalı
+- [x] flutter create iskelet (project-name `gilanli_meyhane`, android)
+- [x] pubspec.yaml bağımlılıkları + `flutter pub get` (riverpod 3.3, firebase 4/6, go_router 17, fl_chart 1.2, intl 0.20, fln 21, timezone 0.11; dev: mocktail, fake_cloud_firestore)
+- [x] `git init` (main) + .gitignore (.claude/) + baseline commit + branch `phase-0-foundation` (baseline test yeşil)
 - [ ] l10n bootstrap (l10n.yaml, app_tr.arb/app_en.arb, gen-l10n, flutter_localizations)
 - [ ] app_constants.dart + app_theme.dart (M3, erişilebilir)
-- [ ] TDD: money.dart (liraToKurus/kurusToLira)
-- [ ] TDD: currency_formatter.dart + currency_extension.dart
-- [ ] TDD: date_utils.dart (week/month range)
-- [ ] TDD: daily_record_calculator.dart (§3.1 — patron masrafı hariç)
+- [x] TDD: money.dart (liraToKurus/kurusToLira) — 5 test yeşil
+- [x] TDD: currency_formatter.dart + currency_extension.dart — 5 test yeşil (TR/EN)
+- [x] TDD: date_utils.dart (week/month range) — 8 test yeşil
+- [x] TDD: daily_record_calculator.dart (§3.1 — patron masrafı hariç) — 9 test yeşil
 - [ ] repo arayüzleri + firebase_providers iskeleti
-- [ ] app.dart + router.dart + ProviderScope (placeholder home)
+- [ ] app.dart + router.dart + ProviderScope (placeholder home, örnek kod temizliği)
 - [ ] Kabul: `flutter test` yeşil + `flutter analyze` temiz
 
 ---
@@ -46,3 +46,9 @@
 ## Kayıt / Notlar (kronolojik)
 
 - **2026-06-02** — Plan onaylandı (formül düzeltmeleriyle). Master plan güncellendi, PROGRESS.md oluşturuldu. Faz 0 başlıyor.
+- **2026-06-02** — Faz 0: scaffold (android) + `git init` (main) + baseline test yeşil + `phase-0-foundation` dalı. Sıradaki: pubspec bağımlılıkları.
+- **2026-06-02** — pubspec bağımlılıkları eklendi + commit. Sıradaki: TDD çekirdek (money → currency → date → calculator).
+- **2026-06-02** — money.dart TDD (5 test yeşil) + commit. Sıradaki: currency_formatter + currency_extension.
+- **2026-06-02** — currency_formatter + extension TDD (5 test yeşil) + commit. Sıradaki: date_utils.
+- **2026-06-02** — date_utils TDD (8 test yeşil) + commit. Sıradaki: daily_record_calculator (§3.1, patron masrafı hariç).
+- **2026-06-02** — DailyRecordCalculator TDD (9 test yeşil, düzeltilmiş formül) + commit. Çekirdek TDD tamam (27 test). Sıradaki: l10n + theme + repo arayüzleri + app shell.

@@ -2,6 +2,7 @@
 ///
 /// Aralıklar **[start dahil, end hariç)** yarı-açık biçimdedir; sorgularda
 /// `date >= start && date < end` kullanılır.
+library;
 
 /// Bir tarih aralığı: [start] dahil, [end] hariç.
 typedef DateRange = ({DateTime start, DateTime end});
