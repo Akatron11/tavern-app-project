@@ -1,8 +1,8 @@
 # Gilanlı Köy Meyhanesi — PROGRESS
 
 **Son güncelleme:** 2026-06-03
-**Aktif faz:** Faz 6 — Ödemeler — başlamaya hazır
-**Branch:** phase-5-credit-book (main'e merge bekliyor)
+**Aktif faz:** Faz 6 — Ödemeler — plan hazır, uygulama bekleniyor
+**Branch:** phase-6-payments
 **Plan:** [docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md](docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md)
 
 > Bu dosya her adım sonrası güncellenir.
@@ -17,7 +17,7 @@
 - [x] **Faz 3 — Personel** ✅ tamam (37 test, analyze temiz)
 - [x] **Faz 4 — Günlük Kayıt** ✅ tamam (63 test, analyze temiz)
 - [x] **Faz 5 — Veresiye Defteri** ✅ tamam (69 test, analyze temiz)
-- [ ] Faz 6 — Ödemeler
+- [ ] **Faz 6 — Ödemeler** ⏳ plan hazır ([2026-06-03-faz-6-odemeler.md](docs/superpowers/plans/2026-06-03-faz-6-odemeler.md))
 - [ ] Faz 7 — Dashboard
 - [ ] Faz 8 — Haftalık Özet
 - [ ] Faz 9 — Aylık Özet
@@ -60,6 +60,7 @@
 - **2026-06-02** — ✅ **Faz 3 KABUL**: Staff model (Role enum + WageHistoryEntry + equatable) + TDD WageResolver (6 test, §3.2) + StaffRepository/Firestore/Mock + staff_providers (ekle/güncelle/pasifle/sil) + StaffListScreen + StaffFormScreen + confirm_dialog.dart (shared) + router /staff rotası + ARB TR/EN string'leri. `flutter test` 37/37 yeşil, `flutter analyze` 0 issue.
 - **2026-06-03** — Faz 4 başladı: `superpowers:writing-plans` ile ayrıntılı TDD planı yazıldı ([docs/superpowers/plans/2026-06-03-faz-4-gunluk-kayit.md](docs/superpowers/plans/2026-06-03-faz-4-gunluk-kayit.md)), `phase-4-daily-record` dalı açıldı. **Kapsam kararı:** §1.3 mutabakatı ve "veresiye creditSales'e yansıma" kabul kriteri gereği minimal `CreditSale` modeli + `CreditReconciler.reconcile` (§3.4 TDD) + `CreditSaleRepository` Faz 4'e çekildi; Faz 5 yalnızca Veresiye Defteri UI'ını ekleyecek. Personel tahakkuku §1.2 gereği yazılmadı (yalnızca `workingStaffIds` saklanır).
 - **2026-06-03** — ✅ **Faz 4 KABUL**: DailyRecord modeli + repo üçlüsü; CreditSale modeli + reconcile + repo üçlüsü; `DailyRecordController.saveRecord` orkestrasyonu (veresiye oluştur/mutabık/sıfırla, dailyCash patron masrafı hariç); MoneyInputField, LiveTotalsCard (canlı kasa, iki masraf ayrı), StaffMultiSelect; DailyRecordScreen (tüm alanlar + kaydet onayı + tarih ile yükleme); /daily rotası + ana ekran hızlı erişim kartları; ARB TR/EN. TDD: model roundtrip (4+3), reconcile (5), controller (5), repo (3+3), LiveTotalsCard (2), ekran canlı toplam (1). `flutter test` **63/63 yeşil**, `flutter analyze` **0 issue**. Sıradaki: dalı `main`'e FF merge, sonra Faz 5.
+- **2026-06-03** — Faz 6 başladı: `superpowers:writing-plans` ile ayrıntılı TDD planı yazıldı ([docs/superpowers/plans/2026-06-03-faz-6-odemeler.md](docs/superpowers/plans/2026-06-03-faz-6-odemeler.md)), `phase-6-payments` dalı açıldı.
 - **2026-06-03** — ✅ **Faz 5 KABUL**: `credit_book_providers.dart` (CreditBookController: addSale/addPayment/markPaid/undoPaid) + `watchAll()` repo genişletmesi + `CreditListScreen` (liste, durum chip'i, BottomSheet aksiyonlar) + `CreditSaleTile` + `CreditForm` (ekleme/düzenleme) + `PaymentDialog` (kısmi ödeme, validasyon) + `/credit` router rotaları + ana ekran kartı + ARB TR/EN. `creditSaleRepositoryProvider` `credit_book_providers.dart`'a taşındı. TDD: 5 controller testi + 1 widget testi. `flutter test` **69/69 yeşil**, `flutter analyze` **0 issue**. Sıradaki: `phase-5-credit-book` → `main` (FF merge), sonra Faz 6.
 
 ---
