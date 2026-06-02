@@ -71,6 +71,14 @@ class PlaceholderHomeScreen extends ConsumerWidget {
                 onTap: () => context.push('/staff'),
               ),
             ),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.menu_book_outlined),
+                title: Text(l10n.openCreditBook),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => context.push('/credit'),
+              ),
+            ),
           ],
         ),
       ),
