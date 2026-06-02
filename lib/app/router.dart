@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../features/auth/application/auth_providers.dart';
 import '../features/auth/presentation/login_screen.dart';
+import '../features/daily_record/presentation/daily_record_screen.dart';
 import '../features/staff/presentation/staff_list_screen.dart';
 import 'placeholder_home_screen.dart';
 
@@ -34,6 +35,10 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/staff',
         builder: (context, state) => const StaffListScreen(),
+      ),
+      GoRoute(
+        path: '/daily',
+        builder: (context, state) => const DailyRecordScreen(),
       ),
     ],
   );

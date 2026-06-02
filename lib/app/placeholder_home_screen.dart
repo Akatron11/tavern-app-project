@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../core/l10n/generated/app_localizations.dart';
 import '../features/auth/application/auth_providers.dart';
@@ -45,7 +46,34 @@ class PlaceholderHomeScreen extends ConsumerWidget {
           ),
         ],
       ),
-      body: Center(child: Text(l10n.greeting('Kemal'))),
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.all(24),
+          children: [
+            Text(
+              l10n.greeting('Kemal'),
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            const SizedBox(height: 24),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.receipt_long),
+                title: Text(l10n.openDailyRecord),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => context.push('/daily'),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.people),
+                title: Text(l10n.openStaff),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => context.push('/staff'),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
