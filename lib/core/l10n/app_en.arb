@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "appTitle": "Gilanli Village Tavern",
+  "greeting": "Hello Mr. {name}",
+  "save": "Save",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "saveConfirmTitle": "Are you sure you want to save?",
+  "settings": "Settings",
+  "language": "Language"
+}

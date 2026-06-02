@@ -1,0 +1,22 @@
+{
+  "@@locale": "tr",
+  "appTitle": "Gilanlı Köy Meyhanesi",
+  "@appTitle": {
+    "description": "Uygulama adı"
+  },
+  "greeting": "Merhabalar {name} Bey",
+  "@greeting": {
+    "description": "Ana ekran karşılama metni",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "save": "Kaydet",
+  "cancel": "Vazgeç",
+  "confirm": "Onayla",
+  "saveConfirmTitle": "Kaydetmek istediğinizden emin misiniz?",
+  "settings": "Ayarlar",
+  "language": "Dil"
+}
