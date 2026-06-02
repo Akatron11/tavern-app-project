@@ -355,6 +355,132 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Pasif'**
   String get inactive;
+
+  /// Günlük kayıt ekranı başlığı ve menü
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük Kayıt'**
+  String get dailyRecord;
+
+  /// No description provided for @recordDate.
+  ///
+  /// In tr, this message translates to:
+  /// **'İş Günü Tarihi'**
+  String get recordDate;
+
+  /// No description provided for @revenue.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Ciro'**
+  String get revenue;
+
+  /// No description provided for @creditCardTotal.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kredi Kartı Toplamı'**
+  String get creditCardTotal;
+
+  /// No description provided for @totalTips.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Bahşiş'**
+  String get totalTips;
+
+  /// No description provided for @ownerExpense.
+  ///
+  /// In tr, this message translates to:
+  /// **'Masraf (Patron Karşılar)'**
+  String get ownerExpense;
+
+  /// No description provided for @cashExpense.
+  ///
+  /// In tr, this message translates to:
+  /// **'Masraf (Kasadan Çıkar)'**
+  String get cashExpense;
+
+  /// No description provided for @creditSale.
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiye Satış'**
+  String get creditSale;
+
+  /// No description provided for @creditCustomer.
+  ///
+  /// In tr, this message translates to:
+  /// **'Müşteri Adı'**
+  String get creditCustomer;
+
+  /// No description provided for @previousDayCash.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dünden Kalan Kasa'**
+  String get previousDayCash;
+
+  /// No description provided for @workingStaff.
+  ///
+  /// In tr, this message translates to:
+  /// **'Çalışan Personeller'**
+  String get workingStaff;
+
+  /// No description provided for @notes.
+  ///
+  /// In tr, this message translates to:
+  /// **'Notlar'**
+  String get notes;
+
+  /// No description provided for @liveTotals.
+  ///
+  /// In tr, this message translates to:
+  /// **'Canlı Toplamlar'**
+  String get liveTotals;
+
+  /// No description provided for @totalExpense.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Masraf'**
+  String get totalExpense;
+
+  /// No description provided for @dailyCash.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük Kasa'**
+  String get dailyCash;
+
+  /// No description provided for @totalCash.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Kasa'**
+  String get totalCash;
+
+  /// No description provided for @noActiveStaff.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aktif personel bulunmuyor.'**
+  String get noActiveStaff;
+
+  /// No description provided for @creditCustomerRequired.
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiye için müşteri adı zorunludur'**
+  String get creditCustomerRequired;
+
+  /// No description provided for @dailyRecordSaved.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük kayıt kaydedildi.'**
+  String get dailyRecordSaved;
+
+  /// No description provided for @openStaff.
+  ///
+  /// In tr, this message translates to:
+  /// **'Personel'**
+  String get openStaff;
+
+  /// No description provided for @openDailyRecord.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük Kayıt'**
+  String get openDailyRecord;
 }
 
 class _AppLocalizationsDelegate

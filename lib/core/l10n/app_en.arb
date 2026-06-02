@@ -48,5 +48,27 @@
   "roleKasiyer": "Cashier",
   "roleDiger": "Other",
   "active": "Active",
-  "inactive": "Inactive"
+  "inactive": "Inactive",
+
+  "dailyRecord": "Daily Record",
+  "recordDate": "Work Day Date",
+  "revenue": "Total Revenue",
+  "creditCardTotal": "Credit Card Total",
+  "totalTips": "Total Tips",
+  "ownerExpense": "Expense (Owner Pays)",
+  "cashExpense": "Expense (From Cash)",
+  "creditSale": "Credit Sale",
+  "creditCustomer": "Customer Name",
+  "previousDayCash": "Previous Day Cash",
+  "workingStaff": "Working Staff",
+  "notes": "Notes",
+  "liveTotals": "Live Totals",
+  "totalExpense": "Total Expense",
+  "dailyCash": "Daily Cash",
+  "totalCash": "Total Cash",
+  "noActiveStaff": "No active staff.",
+  "creditCustomerRequired": "Customer name is required for a credit sale",
+  "dailyRecordSaved": "Daily record saved.",
+  "openStaff": "Staff",
+  "openDailyRecord": "Daily Record"
 }

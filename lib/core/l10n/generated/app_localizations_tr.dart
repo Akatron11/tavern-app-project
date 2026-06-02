@@ -143,4 +143,67 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get inactive => 'Pasif';
+
+  @override
+  String get dailyRecord => 'Günlük Kayıt';
+
+  @override
+  String get recordDate => 'İş Günü Tarihi';
+
+  @override
+  String get revenue => 'Toplam Ciro';
+
+  @override
+  String get creditCardTotal => 'Kredi Kartı Toplamı';
+
+  @override
+  String get totalTips => 'Toplam Bahşiş';
+
+  @override
+  String get ownerExpense => 'Masraf (Patron Karşılar)';
+
+  @override
+  String get cashExpense => 'Masraf (Kasadan Çıkar)';
+
+  @override
+  String get creditSale => 'Veresiye Satış';
+
+  @override
+  String get creditCustomer => 'Müşteri Adı';
+
+  @override
+  String get previousDayCash => 'Dünden Kalan Kasa';
+
+  @override
+  String get workingStaff => 'Çalışan Personeller';
+
+  @override
+  String get notes => 'Notlar';
+
+  @override
+  String get liveTotals => 'Canlı Toplamlar';
+
+  @override
+  String get totalExpense => 'Toplam Masraf';
+
+  @override
+  String get dailyCash => 'Günlük Kasa';
+
+  @override
+  String get totalCash => 'Toplam Kasa';
+
+  @override
+  String get noActiveStaff => 'Aktif personel bulunmuyor.';
+
+  @override
+  String get creditCustomerRequired => 'Veresiye için müşteri adı zorunludur';
+
+  @override
+  String get dailyRecordSaved => 'Günlük kayıt kaydedildi.';
+
+  @override
+  String get openStaff => 'Personel';
+
+  @override
+  String get openDailyRecord => 'Günlük Kayıt';
 }

@@ -144,4 +144,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get inactive => 'Inactive';
+
+  @override
+  String get dailyRecord => 'Daily Record';
+
+  @override
+  String get recordDate => 'Work Day Date';
+
+  @override
+  String get revenue => 'Total Revenue';
+
+  @override
+  String get creditCardTotal => 'Credit Card Total';
+
+  @override
+  String get totalTips => 'Total Tips';
+
+  @override
+  String get ownerExpense => 'Expense (Owner Pays)';
+
+  @override
+  String get cashExpense => 'Expense (From Cash)';
+
+  @override
+  String get creditSale => 'Credit Sale';
+
+  @override
+  String get creditCustomer => 'Customer Name';
+
+  @override
+  String get previousDayCash => 'Previous Day Cash';
+
+  @override
+  String get workingStaff => 'Working Staff';
+
+  @override
+  String get notes => 'Notes';
+
+  @override
+  String get liveTotals => 'Live Totals';
+
+  @override
+  String get totalExpense => 'Total Expense';
+
+  @override
+  String get dailyCash => 'Daily Cash';
+
+  @override
+  String get totalCash => 'Total Cash';
+
+  @override
+  String get noActiveStaff => 'No active staff.';
+
+  @override
+  String get creditCustomerRequired =>
+      'Customer name is required for a credit sale';
+
+  @override
+  String get dailyRecordSaved => 'Daily record saved.';
+
+  @override
+  String get openStaff => 'Staff';
+
+  @override
+  String get openDailyRecord => 'Daily Record';
 }
