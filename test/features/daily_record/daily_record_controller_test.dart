@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gilanli_meyhane/features/credit_book/application/credit_book_providers.dart';
 import 'package:gilanli_meyhane/features/credit_book/data/mock_credit_sale_repository.dart';
 import 'package:gilanli_meyhane/features/credit_book/domain/credit_sale.dart';
 import 'package:gilanli_meyhane/features/daily_record/application/daily_record_providers.dart';

@@ -12,6 +12,14 @@ class FirestoreCreditSaleRepository implements CreditSaleRepository {
       _firestore.collection('creditSales');
 
   @override
+  Stream<List<CreditSale>> watchAll() => _col
+      .orderBy('date', descending: true)
+      .snapshots()
+      .map((snap) => snap.docs
+          .map((d) => CreditSale.fromMap(d.id, d.data()))
+          .toList());
+
+  @override
   Future<String> add(CreditSale sale) async {
     final ref = await _col.add(sale.toMap()..remove('id'));
     return ref.id;

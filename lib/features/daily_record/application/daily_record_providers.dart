@@ -2,8 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/utils/date_utils.dart';
 import '../../../shared/providers/firebase_providers.dart';
+import '../../credit_book/application/credit_book_providers.dart';
 import '../../credit_book/data/credit_sale_repository.dart';
-import '../../credit_book/data/firestore_credit_sale_repository.dart';
 import '../../credit_book/domain/credit_reconciler.dart';
 import '../../credit_book/domain/credit_sale.dart';
 import '../data/daily_record_repository.dart';
@@ -13,10 +13,6 @@ import '../domain/daily_record_calculator.dart';
 
 final dailyRecordRepositoryProvider = Provider<DailyRecordRepository>((ref) {
   return FirestoreDailyRecordRepository(ref.watch(firestoreProvider));
-});
-
-final creditSaleRepositoryProvider = Provider<CreditSaleRepository>((ref) {
-  return FirestoreCreditSaleRepository(ref.watch(firestoreProvider));
 });
 
 final dailyRecordControllerProvider =
