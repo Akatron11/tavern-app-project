@@ -1,7 +1,7 @@
 # Gilanlı Köy Meyhanesi — PROGRESS
 
 **Son güncelleme:** 2026-06-02
-**Aktif faz:** Faz 1 — Firebase Kurulumu (Kemal kullanıcısı bekleniyor)
+**Aktif faz:** Faz 2 — Auth (Login) — başlamaya hazır (Kemal Firebase hesabı gerekiyor)
 **Branch:** main (Faz 0 birleştirildi)
 **Plan:** [docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md](docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md)
 
@@ -12,7 +12,7 @@
 ## Faz Durumu
 
 - [x] **Faz 0 — Temel & Çekirdek** ✅ tamam (28 test, analyze temiz)
-- [~] Faz 1 — Firebase Kurulumu (Kemal hesabı bekleniyor)
+- [x] **Faz 1 — Firebase Kurulumu** ✅ kod tam; kimlikli smoke testi Faz 2 başında (Kemal hesabı + login)
 - [ ] Faz 2 — Auth (Login)
 - [ ] Faz 3 — Personel
 - [ ] Faz 4 — Günlük Kayıt
@@ -55,3 +55,4 @@
 - **2026-06-02** — l10n (TR/EN) + tema + sabitler + app shell (GilanliApp, GoRouter, placeholder home) tamam; counter kaldırıldı, smoke test eklendi. **Faz 0 KABUL: 28 test yeşil, analyze temiz.** repo arayüzleri Faz 1'e ertelendi. Sıradaki: Faz 0 dalını kapat, sonra Faz 1 (Firebase — kullanıcı aksiyonu gerekiyor).
 - **2026-06-02** — ✅ **Faz 0 KAPANDI**: `phase-0-foundation` → `main` (FF merge), dal silindi. 8 commit, 28 test yeşil. Faz 1 (Firebase) kullanıcı aksiyonu bekliyor.
 - **2026-06-02** — Faz 1: Firebase projesi `gilanli-meyhane` oluşturuldu. Android uygulaması + Firestore + Auth (email/password) init. `flutterfire configure` → `firebase_options.dart` üretildi. `main.dart` Firebase+tz init ile güncellendi. `firebase_providers.dart` oluşturuldu. Güvenlik kuralları (`request.auth != null`) deploy edildi. **Kalan:** Firebase Console'dan Kemal hesabı oluşturulacak.
+- **2026-06-02** — ✅ **Faz 1 VERIFICATION**: `flutter test` 28/28 yeşil, `flutter analyze` 0 issue, `firestore.rules` canlı deploy doğrulandı (MCP). Kimliksiz erişim kurallarla reddediliyor ✅. Kimlikli smoke testi Faz 2 başında yapılacak (Kemal hesabı + login ekranı gerekiyor). Faz 1 KOD KABUL.
