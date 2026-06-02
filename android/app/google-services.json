@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "524276990629",
+    "project_id": "gilanli-meyhane",
+    "storage_bucket": "gilanli-meyhane.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524276990629:android:d65e4e7244e00e0bf1434c",
+        "android_client_info": {
+          "package_name": "com.gilanlikoy.gilanli_meyhane"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBDI9ZTqk2emNBRuaAfwiysJxJOk7dgE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
