@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../../../core/utils/date_utils.dart';
 import '../domain/daily_record.dart';
 import 'daily_record_repository.dart';
 
@@ -25,6 +26,19 @@ class FirestoreDailyRecordRepository implements DailyRecordRepository {
   @override
   Future<List<DailyRecord>> getAll() async {
     final snap = await _col.get();
+    return snap.docs
+        .map((doc) => DailyRecord.fromMap(doc.id, doc.data()))
+        .toList();
+  }
+
+  @override
+  Future<List<DailyRecord>> getByDateRange(DateRange range) async {
+    final startKey = dayKey(range.start);
+    final endKey = dayKey(range.end);
+    final snap = await _col
+        .where(FieldPath.documentId, isGreaterThanOrEqualTo: startKey)
+        .where(FieldPath.documentId, isLessThan: endKey)
+        .get();
     return snap.docs
         .map((doc) => DailyRecord.fromMap(doc.id, doc.data()))
         .toList();

@@ -1,3 +1,4 @@
+import '../../../core/utils/date_utils.dart';
 import '../domain/daily_record.dart';
 import 'daily_record_repository.dart';
 
@@ -14,4 +15,12 @@ class MockDailyRecordRepository implements DailyRecordRepository {
 
   @override
   Future<List<DailyRecord>> getAll() async => store.values.toList();
+
+  @override
+  Future<List<DailyRecord>> getByDateRange(DateRange range) async {
+    return store.values
+        .where((r) =>
+            !r.date.isBefore(range.start) && r.date.isBefore(range.end))
+        .toList();
+  }
 }

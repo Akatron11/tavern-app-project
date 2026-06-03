@@ -1,3 +1,4 @@
+import '../../../core/utils/date_utils.dart';
 import '../domain/daily_record.dart';
 
 abstract class DailyRecordRepository {
@@ -9,4 +10,7 @@ abstract class DailyRecordRepository {
 
   /// Tüm günlük kayıtları getirir (personel tahakkuku hesabı için).
   Future<List<DailyRecord>> getAll();
+
+  /// [range.start] dahil, [range.end] hariç aralıktaki kayıtları döner.
+  Future<List<DailyRecord>> getByDateRange(DateRange range);
 }
