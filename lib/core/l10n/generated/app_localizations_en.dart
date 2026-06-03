@@ -463,4 +463,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get monthlyCreditSalesTable => 'Monthly Credit Sales';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get notificationsEnabled => 'Daily Reminder';
+
+  @override
+  String get notificationTime => 'Reminder Time';
+
+  @override
+  String get notificationBody => 'Don\'t forget to enter today\'s cash record.';
+
+  @override
+  String get languageSection => 'Language';
+
+  @override
+  String get turkish => 'Turkish';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get openSettings => 'Settings';
 }

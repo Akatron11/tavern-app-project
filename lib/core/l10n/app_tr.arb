@@ -206,5 +206,22 @@
   "noRecordsThisMonth": "Bu ay kayıt bulunmuyor.",
   "@noRecordsThisMonth": { "description": "Aylık özet — kayıt yoksa gösterilen mesaj" },
   "monthlyCreditSalesTable": "Aylık Veresiyeler",
-  "@monthlyCreditSalesTable": { "description": "Aylık özet — veresiye tablosu başlığı" }
+  "@monthlyCreditSalesTable": { "description": "Aylık özet — veresiye tablosu başlığı" },
+
+  "notifications": "Bildirimler",
+  "@notifications": { "description": "Ayarlar — bildirim bölümü başlığı" },
+  "notificationsEnabled": "Günlük Hatırlatma",
+  "@notificationsEnabled": { "description": "Ayarlar — günlük hatırlatma aç/kapa switch etiketi" },
+  "notificationTime": "Hatırlatma Saati",
+  "@notificationTime": { "description": "Ayarlar — hatırlatma saati seçici etiketi" },
+  "notificationBody": "Bugünün kasa kaydını girmeyi unutmayın.",
+  "@notificationBody": { "description": "Günlük hatırlatma bildirim gövdesi" },
+  "languageSection": "Dil",
+  "@languageSection": { "description": "Ayarlar — dil bölümü başlığı" },
+  "turkish": "Türkçe",
+  "@turkish": { "description": "Dil seçeneği — Türkçe" },
+  "english": "İngilizce",
+  "@english": { "description": "Dil seçeneği — İngilizce" },
+  "openSettings": "Ayarlar",
+  "@openSettings": { "description": "Dashboard — ayarlar ikonu tooltip" }
 }

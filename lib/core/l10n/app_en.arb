@@ -162,5 +162,14 @@
   "monthlyUncollectible": "Uncollectible",
   "monthlyProfitLabel": "Profit / Loss",
   "noRecordsThisMonth": "No records this month.",
-  "monthlyCreditSalesTable": "Monthly Credit Sales"
+  "monthlyCreditSalesTable": "Monthly Credit Sales",
+
+  "notifications": "Notifications",
+  "notificationsEnabled": "Daily Reminder",
+  "notificationTime": "Reminder Time",
+  "notificationBody": "Don't forget to enter today's cash record.",
+  "languageSection": "Language",
+  "turkish": "Turkish",
+  "english": "English",
+  "openSettings": "Settings"
 }

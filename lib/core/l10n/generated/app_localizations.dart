@@ -979,6 +979,54 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Aylık Veresiyeler'**
   String get monthlyCreditSalesTable;
+
+  /// Ayarlar — bildirim bölümü başlığı
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildirimler'**
+  String get notifications;
+
+  /// Ayarlar — günlük hatırlatma aç/kapa switch etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük Hatırlatma'**
+  String get notificationsEnabled;
+
+  /// Ayarlar — hatırlatma saati seçici etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Hatırlatma Saati'**
+  String get notificationTime;
+
+  /// Günlük hatırlatma bildirim gövdesi
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugünün kasa kaydını girmeyi unutmayın.'**
+  String get notificationBody;
+
+  /// Ayarlar — dil bölümü başlığı
+  ///
+  /// In tr, this message translates to:
+  /// **'Dil'**
+  String get languageSection;
+
+  /// Dil seçeneği — Türkçe
+  ///
+  /// In tr, this message translates to:
+  /// **'Türkçe'**
+  String get turkish;
+
+  /// Dil seçeneği — İngilizce
+  ///
+  /// In tr, this message translates to:
+  /// **'İngilizce'**
+  String get english;
+
+  /// Dashboard — ayarlar ikonu tooltip
+  ///
+  /// In tr, this message translates to:
+  /// **'Ayarlar'**
+  String get openSettings;
 }
 
 class _AppLocalizationsDelegate

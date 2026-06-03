@@ -464,4 +464,28 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get monthlyCreditSalesTable => 'Aylık Veresiyeler';
+
+  @override
+  String get notifications => 'Bildirimler';
+
+  @override
+  String get notificationsEnabled => 'Günlük Hatırlatma';
+
+  @override
+  String get notificationTime => 'Hatırlatma Saati';
+
+  @override
+  String get notificationBody => 'Bugünün kasa kaydını girmeyi unutmayın.';
+
+  @override
+  String get languageSection => 'Dil';
+
+  @override
+  String get turkish => 'Türkçe';
+
+  @override
+  String get english => 'İngilizce';
+
+  @override
+  String get openSettings => 'Ayarlar';
 }
