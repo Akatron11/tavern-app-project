@@ -160,5 +160,26 @@
   "openWeeklySummary": "Haftalık Özet",
   "@openWeeklySummary": { "description": "Dashboard hızlı erişim — haftalık özet kartı" },
   "openMonthlySummary": "Aylık Özet",
-  "@openMonthlySummary": { "description": "Dashboard hızlı erişim — aylık özet kartı" }
+  "@openMonthlySummary": { "description": "Dashboard hızlı erişim — aylık özet kartı" },
+
+  "prevWeek": "Önceki Hafta",
+  "@prevWeek": { "description": "Haftalık özet — önceki hafta butonu tooltip" },
+  "nextWeek": "Sonraki Hafta",
+  "@nextWeek": { "description": "Haftalık özet — sonraki hafta butonu tooltip" },
+  "weeklyRevenue": "Haftalık Ciro",
+  "weeklyTips": "Haftalık Bahşiş",
+  "openTips": "Dağıtılmamış Bahşiş",
+  "@openTips": { "description": "Haftalık özet — dağıtılmamış bahşiş etiket" },
+  "distributeTips": "Dağıtıldı, Kapat",
+  "@distributeTips": { "description": "Bahşiş dağıtım butonu" },
+  "distributeTipsConfirmTitle": "Bahşiş dağıtımını onaylıyor musunuz?",
+  "distributeTipsConfirmBody": "{amount} dağıtılmamış bahşiş kasadan düşülecek.",
+  "@distributeTipsConfirmBody": {
+    "description": "Bahşiş dağıtım onay dialog içeriği",
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "tipsDistributed": "Bahşiş dağıtımı kaydedildi.",
+  "noRecordsThisWeek": "Bu hafta kayıt bulunmuyor.",
+  "staffDaysTitle": "Personel Günleri",
+  "noOpenTips": "Dağıtılacak bahşiş yok."
 }

@@ -132,5 +132,22 @@
   "noRecordToday": "No record entered for today.",
   "workingStaffCountLabel": "Working Staff",
   "openWeeklySummary": "Weekly Summary",
-  "openMonthlySummary": "Monthly Summary"
+  "openMonthlySummary": "Monthly Summary",
+
+  "prevWeek": "Previous Week",
+  "nextWeek": "Next Week",
+  "weeklyRevenue": "Weekly Revenue",
+  "weeklyTips": "Weekly Tips",
+  "openTips": "Undistributed Tips",
+  "distributeTips": "Distribute & Close",
+  "distributeTipsConfirmTitle": "Confirm tip distribution?",
+  "distributeTipsConfirmBody": "{amount} in undistributed tips will be deducted from cash.",
+  "@distributeTipsConfirmBody": {
+    "description": "Tip distribution confirm dialog body",
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "tipsDistributed": "Tip distribution recorded.",
+  "noRecordsThisWeek": "No records this week.",
+  "staffDaysTitle": "Staff Days",
+  "noOpenTips": "No tips to distribute."
 }

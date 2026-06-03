@@ -389,4 +389,43 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get openMonthlySummary => 'Aylık Özet';
+
+  @override
+  String get prevWeek => 'Önceki Hafta';
+
+  @override
+  String get nextWeek => 'Sonraki Hafta';
+
+  @override
+  String get weeklyRevenue => 'Haftalık Ciro';
+
+  @override
+  String get weeklyTips => 'Haftalık Bahşiş';
+
+  @override
+  String get openTips => 'Dağıtılmamış Bahşiş';
+
+  @override
+  String get distributeTips => 'Dağıtıldı, Kapat';
+
+  @override
+  String get distributeTipsConfirmTitle =>
+      'Bahşiş dağıtımını onaylıyor musunuz?';
+
+  @override
+  String distributeTipsConfirmBody(String amount) {
+    return '$amount dağıtılmamış bahşiş kasadan düşülecek.';
+  }
+
+  @override
+  String get tipsDistributed => 'Bahşiş dağıtımı kaydedildi.';
+
+  @override
+  String get noRecordsThisWeek => 'Bu hafta kayıt bulunmuyor.';
+
+  @override
+  String get staffDaysTitle => 'Personel Günleri';
+
+  @override
+  String get noOpenTips => 'Dağıtılacak bahşiş yok.';
 }

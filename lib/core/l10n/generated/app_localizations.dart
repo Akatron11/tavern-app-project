@@ -835,6 +835,78 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Aylık Özet'**
   String get openMonthlySummary;
+
+  /// Haftalık özet — önceki hafta butonu tooltip
+  ///
+  /// In tr, this message translates to:
+  /// **'Önceki Hafta'**
+  String get prevWeek;
+
+  /// Haftalık özet — sonraki hafta butonu tooltip
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonraki Hafta'**
+  String get nextWeek;
+
+  /// No description provided for @weeklyRevenue.
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık Ciro'**
+  String get weeklyRevenue;
+
+  /// No description provided for @weeklyTips.
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık Bahşiş'**
+  String get weeklyTips;
+
+  /// Haftalık özet — dağıtılmamış bahşiş etiket
+  ///
+  /// In tr, this message translates to:
+  /// **'Dağıtılmamış Bahşiş'**
+  String get openTips;
+
+  /// Bahşiş dağıtım butonu
+  ///
+  /// In tr, this message translates to:
+  /// **'Dağıtıldı, Kapat'**
+  String get distributeTips;
+
+  /// No description provided for @distributeTipsConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bahşiş dağıtımını onaylıyor musunuz?'**
+  String get distributeTipsConfirmTitle;
+
+  /// Bahşiş dağıtım onay dialog içeriği
+  ///
+  /// In tr, this message translates to:
+  /// **'{amount} dağıtılmamış bahşiş kasadan düşülecek.'**
+  String distributeTipsConfirmBody(String amount);
+
+  /// No description provided for @tipsDistributed.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bahşiş dağıtımı kaydedildi.'**
+  String get tipsDistributed;
+
+  /// No description provided for @noRecordsThisWeek.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu hafta kayıt bulunmuyor.'**
+  String get noRecordsThisWeek;
+
+  /// No description provided for @staffDaysTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Personel Günleri'**
+  String get staffDaysTitle;
+
+  /// No description provided for @noOpenTips.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dağıtılacak bahşiş yok.'**
+  String get noOpenTips;
 }
 
 class _AppLocalizationsDelegate

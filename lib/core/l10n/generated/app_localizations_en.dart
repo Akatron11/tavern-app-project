@@ -389,4 +389,42 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get openMonthlySummary => 'Monthly Summary';
+
+  @override
+  String get prevWeek => 'Previous Week';
+
+  @override
+  String get nextWeek => 'Next Week';
+
+  @override
+  String get weeklyRevenue => 'Weekly Revenue';
+
+  @override
+  String get weeklyTips => 'Weekly Tips';
+
+  @override
+  String get openTips => 'Undistributed Tips';
+
+  @override
+  String get distributeTips => 'Distribute & Close';
+
+  @override
+  String get distributeTipsConfirmTitle => 'Confirm tip distribution?';
+
+  @override
+  String distributeTipsConfirmBody(String amount) {
+    return '$amount in undistributed tips will be deducted from cash.';
+  }
+
+  @override
+  String get tipsDistributed => 'Tip distribution recorded.';
+
+  @override
+  String get noRecordsThisWeek => 'No records this week.';
+
+  @override
+  String get staffDaysTitle => 'Staff Days';
+
+  @override
+  String get noOpenTips => 'No tips to distribute.';
 }
