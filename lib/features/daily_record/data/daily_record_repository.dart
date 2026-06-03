@@ -6,4 +6,7 @@ abstract class DailyRecordRepository {
 
   /// Kaydı `dayKey` doküman kimliğiyle upsert eder (ekle veya güncelle).
   Future<void> save(DailyRecord record);
+
+  /// Tüm günlük kayıtları getirir (personel tahakkuku hesabı için).
+  Future<List<DailyRecord>> getAll();
 }

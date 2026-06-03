@@ -21,4 +21,12 @@ class FirestoreDailyRecordRepository implements DailyRecordRepository {
   @override
   Future<void> save(DailyRecord record) =>
       _col.doc(record.id).set(record.toMap()..remove('id'));
+
+  @override
+  Future<List<DailyRecord>> getAll() async {
+    final snap = await _col.get();
+    return snap.docs
+        .map((doc) => DailyRecord.fromMap(doc.id, doc.data()))
+        .toList();
+  }
 }

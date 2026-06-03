@@ -52,4 +52,15 @@ void main() {
     final repo = FirestoreDailyRecordRepository(fake);
     expect(await repo.getByDay('2099-01-01'), isNull);
   });
+
+  test('getAll tüm kayıtları döner', () async {
+    final fake = FakeFirebaseFirestore();
+    final repo = FirestoreDailyRecordRepository(fake);
+
+    await repo.save(record('2026-06-01', DateTime(2026, 6, 1)));
+    await repo.save(record('2026-06-02', DateTime(2026, 6, 2)));
+
+    final all = await repo.getAll();
+    expect(all.length, 2);
+  });
 }

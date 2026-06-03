@@ -11,4 +11,7 @@ class MockDailyRecordRepository implements DailyRecordRepository {
   Future<void> save(DailyRecord record) async {
     store[record.id] = record;
   }
+
+  @override
+  Future<List<DailyRecord>> getAll() async => store.values.toList();
 }
