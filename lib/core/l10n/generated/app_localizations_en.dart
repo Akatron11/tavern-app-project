@@ -427,4 +427,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noOpenTips => 'No tips to distribute.';
+
+  @override
+  String get prevMonth => 'Previous Month';
+
+  @override
+  String get nextMonth => 'Next Month';
+
+  @override
+  String get monthlyRevenue => 'Monthly Revenue';
+
+  @override
+  String get monthlyCreditCard => 'Credit Card';
+
+  @override
+  String get monthlyCashExpenses => 'Cash Expenses';
+
+  @override
+  String get monthlyOwnerExpenses => 'Owner Expenses';
+
+  @override
+  String get monthlyStaffWages => 'Staff Wages';
+
+  @override
+  String get monthlyCreditSalesTotal => 'Credit Sales (Total)';
+
+  @override
+  String get monthlyUncollectible => 'Uncollectible';
+
+  @override
+  String get monthlyProfitLabel => 'Profit / Loss';
+
+  @override
+  String get noRecordsThisMonth => 'No records this month.';
+
+  @override
+  String get monthlyCreditSalesTable => 'Monthly Credit Sales';
 }

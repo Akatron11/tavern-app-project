@@ -428,4 +428,40 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get noOpenTips => 'Dağıtılacak bahşiş yok.';
+
+  @override
+  String get prevMonth => 'Önceki Ay';
+
+  @override
+  String get nextMonth => 'Sonraki Ay';
+
+  @override
+  String get monthlyRevenue => 'Aylık Ciro';
+
+  @override
+  String get monthlyCreditCard => 'Kredi Kartı';
+
+  @override
+  String get monthlyCashExpenses => 'Kasa Masrafı';
+
+  @override
+  String get monthlyOwnerExpenses => 'Patron Masrafı';
+
+  @override
+  String get monthlyStaffWages => 'Personel Ücretleri';
+
+  @override
+  String get monthlyCreditSalesTotal => 'Veresiye (Toplam)';
+
+  @override
+  String get monthlyUncollectible => 'Tahsil Edilemeyen';
+
+  @override
+  String get monthlyProfitLabel => 'Kâr / Zarar';
+
+  @override
+  String get noRecordsThisMonth => 'Bu ay kayıt bulunmuyor.';
+
+  @override
+  String get monthlyCreditSalesTable => 'Aylık Veresiyeler';
 }

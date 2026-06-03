@@ -149,5 +149,18 @@
   "tipsDistributed": "Tip distribution recorded.",
   "noRecordsThisWeek": "No records this week.",
   "staffDaysTitle": "Staff Days",
-  "noOpenTips": "No tips to distribute."
+  "noOpenTips": "No tips to distribute.",
+
+  "prevMonth": "Previous Month",
+  "nextMonth": "Next Month",
+  "monthlyRevenue": "Monthly Revenue",
+  "monthlyCreditCard": "Credit Card",
+  "monthlyCashExpenses": "Cash Expenses",
+  "monthlyOwnerExpenses": "Owner Expenses",
+  "monthlyStaffWages": "Staff Wages",
+  "monthlyCreditSalesTotal": "Credit Sales (Total)",
+  "monthlyUncollectible": "Uncollectible",
+  "monthlyProfitLabel": "Profit / Loss",
+  "noRecordsThisMonth": "No records this month.",
+  "monthlyCreditSalesTable": "Monthly Credit Sales"
 }

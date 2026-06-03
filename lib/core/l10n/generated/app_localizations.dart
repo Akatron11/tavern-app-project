@@ -907,6 +907,78 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Dağıtılacak bahşiş yok.'**
   String get noOpenTips;
+
+  /// Aylık özet — önceki ay butonu tooltip
+  ///
+  /// In tr, this message translates to:
+  /// **'Önceki Ay'**
+  String get prevMonth;
+
+  /// Aylık özet — sonraki ay butonu tooltip
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonraki Ay'**
+  String get nextMonth;
+
+  /// Aylık özet — ciro kartı etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Aylık Ciro'**
+  String get monthlyRevenue;
+
+  /// Aylık özet — kredi kartı kartı etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Kredi Kartı'**
+  String get monthlyCreditCard;
+
+  /// Aylık özet — kasa masrafı kartı etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Kasa Masrafı'**
+  String get monthlyCashExpenses;
+
+  /// Aylık özet — patron masrafı kartı etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Patron Masrafı'**
+  String get monthlyOwnerExpenses;
+
+  /// Aylık özet — personel ücretleri kartı etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Personel Ücretleri'**
+  String get monthlyStaffWages;
+
+  /// Aylık özet — veresiye toplam etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiye (Toplam)'**
+  String get monthlyCreditSalesTotal;
+
+  /// Aylık özet — tahsil edilemeyen veresiye etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Tahsil Edilemeyen'**
+  String get monthlyUncollectible;
+
+  /// Aylık özet — kâr zarar kartı etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Kâr / Zarar'**
+  String get monthlyProfitLabel;
+
+  /// Aylık özet — kayıt yoksa gösterilen mesaj
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu ay kayıt bulunmuyor.'**
+  String get noRecordsThisMonth;
+
+  /// Aylık özet — veresiye tablosu başlığı
+  ///
+  /// In tr, this message translates to:
+  /// **'Aylık Veresiyeler'**
+  String get monthlyCreditSalesTable;
 }
 
 class _AppLocalizationsDelegate
