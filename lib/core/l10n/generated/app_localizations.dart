@@ -625,6 +625,186 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Veresiye Defteri'**
   String get openCreditBook;
+
+  /// Ödemeler ekranı başlığı ve menü
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödemeler'**
+  String get payments;
+
+  /// No description provided for @openPayments.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödemeler'**
+  String get openPayments;
+
+  /// No description provided for @staffPaymentsTab.
+  ///
+  /// In tr, this message translates to:
+  /// **'Personel'**
+  String get staffPaymentsTab;
+
+  /// No description provided for @expensesTab.
+  ///
+  /// In tr, this message translates to:
+  /// **'Giderler'**
+  String get expensesTab;
+
+  /// No description provided for @workedDays.
+  ///
+  /// In tr, this message translates to:
+  /// **'Çalışılan Gün'**
+  String get workedDays;
+
+  /// No description provided for @accruedWage.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tahakkuk'**
+  String get accruedWage;
+
+  /// No description provided for @totalPaid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödenen'**
+  String get totalPaid;
+
+  /// No description provided for @remainingBalance.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kalan'**
+  String get remainingBalance;
+
+  /// No description provided for @addPaymentToStaff.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödeme Kaydet'**
+  String get addPaymentToStaff;
+
+  /// No description provided for @paymentToStaffConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu ödemeyi kaydetmek istediğinizden emin misiniz?'**
+  String get paymentToStaffConfirmTitle;
+
+  /// No description provided for @staffPaymentAdded.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödeme kaydedildi.'**
+  String get staffPaymentAdded;
+
+  /// No description provided for @noStaffForPayments.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aktif personel bulunamadı.'**
+  String get noStaffForPayments;
+
+  /// No description provided for @addExpense.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gider Ekle'**
+  String get addExpense;
+
+  /// No description provided for @editExpense.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gider Düzenle'**
+  String get editExpense;
+
+  /// No description provided for @expenseDescription.
+  ///
+  /// In tr, this message translates to:
+  /// **'Açıklama'**
+  String get expenseDescription;
+
+  /// No description provided for @expenseDescriptionRequired.
+  ///
+  /// In tr, this message translates to:
+  /// **'Açıklama zorunludur'**
+  String get expenseDescriptionRequired;
+
+  /// No description provided for @expenseTotalAmount.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Tutar (₺)'**
+  String get expenseTotalAmount;
+
+  /// No description provided for @expenseTotalAmountRequired.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam tutar zorunludur'**
+  String get expenseTotalAmountRequired;
+
+  /// No description provided for @expenseTotalAmountInvalid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Geçerli bir tutar giriniz'**
+  String get expenseTotalAmountInvalid;
+
+  /// No description provided for @expenseAdded.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gider kaydedildi.'**
+  String get expenseAdded;
+
+  /// No description provided for @expenseUpdated.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gider güncellendi.'**
+  String get expenseUpdated;
+
+  /// No description provided for @expensePaymentAdded.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödeme kaydedildi.'**
+  String get expensePaymentAdded;
+
+  /// No description provided for @expenseMarkAsPaid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödendi'**
+  String get expenseMarkAsPaid;
+
+  /// No description provided for @expenseMarkAsPaidConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu gideri ödenmiş olarak işaretlemek istiyor musunuz?'**
+  String get expenseMarkAsPaidConfirmTitle;
+
+  /// No description provided for @expenseUndoPaid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Geri Al'**
+  String get expenseUndoPaid;
+
+  /// No description provided for @expenseUndoPaidConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu ödemeyi geri almak istediğinizden emin misiniz?'**
+  String get expenseUndoPaidConfirmTitle;
+
+  /// No description provided for @noExpenses.
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz gider kaydı yok.'**
+  String get noExpenses;
+
+  /// No description provided for @expenseStatusPending.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bekliyor'**
+  String get expenseStatusPending;
+
+  /// No description provided for @expenseStatusPartial.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kısmi Ödendi'**
+  String get expenseStatusPartial;
+
+  /// No description provided for @expenseStatusPaid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ödendi'**
+  String get expenseStatusPaid;
 }
 
 class _AppLocalizationsDelegate

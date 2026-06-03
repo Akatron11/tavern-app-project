@@ -282,4 +282,96 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get openCreditBook => 'Credit Book';
+
+  @override
+  String get payments => 'Payments';
+
+  @override
+  String get openPayments => 'Payments';
+
+  @override
+  String get staffPaymentsTab => 'Staff';
+
+  @override
+  String get expensesTab => 'Expenses';
+
+  @override
+  String get workedDays => 'Days Worked';
+
+  @override
+  String get accruedWage => 'Accrued';
+
+  @override
+  String get totalPaid => 'Paid';
+
+  @override
+  String get remainingBalance => 'Remaining';
+
+  @override
+  String get addPaymentToStaff => 'Record Payment';
+
+  @override
+  String get paymentToStaffConfirmTitle =>
+      'Are you sure you want to record this payment?';
+
+  @override
+  String get staffPaymentAdded => 'Payment recorded.';
+
+  @override
+  String get noStaffForPayments => 'No active staff found.';
+
+  @override
+  String get addExpense => 'Add Expense';
+
+  @override
+  String get editExpense => 'Edit Expense';
+
+  @override
+  String get expenseDescription => 'Description';
+
+  @override
+  String get expenseDescriptionRequired => 'Description is required';
+
+  @override
+  String get expenseTotalAmount => 'Total Amount (₺)';
+
+  @override
+  String get expenseTotalAmountRequired => 'Total amount is required';
+
+  @override
+  String get expenseTotalAmountInvalid => 'Enter a valid amount';
+
+  @override
+  String get expenseAdded => 'Expense saved.';
+
+  @override
+  String get expenseUpdated => 'Expense updated.';
+
+  @override
+  String get expensePaymentAdded => 'Payment recorded.';
+
+  @override
+  String get expenseMarkAsPaid => 'Mark as Paid';
+
+  @override
+  String get expenseMarkAsPaidConfirmTitle => 'Mark this expense as paid?';
+
+  @override
+  String get expenseUndoPaid => 'Undo';
+
+  @override
+  String get expenseUndoPaidConfirmTitle =>
+      'Are you sure you want to undo this payment?';
+
+  @override
+  String get noExpenses => 'No expense records yet.';
+
+  @override
+  String get expenseStatusPending => 'Pending';
+
+  @override
+  String get expenseStatusPartial => 'Partially Paid';
+
+  @override
+  String get expenseStatusPaid => 'Paid';
 }

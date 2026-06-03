@@ -281,4 +281,97 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get openCreditBook => 'Veresiye Defteri';
+
+  @override
+  String get payments => 'Ödemeler';
+
+  @override
+  String get openPayments => 'Ödemeler';
+
+  @override
+  String get staffPaymentsTab => 'Personel';
+
+  @override
+  String get expensesTab => 'Giderler';
+
+  @override
+  String get workedDays => 'Çalışılan Gün';
+
+  @override
+  String get accruedWage => 'Tahakkuk';
+
+  @override
+  String get totalPaid => 'Ödenen';
+
+  @override
+  String get remainingBalance => 'Kalan';
+
+  @override
+  String get addPaymentToStaff => 'Ödeme Kaydet';
+
+  @override
+  String get paymentToStaffConfirmTitle =>
+      'Bu ödemeyi kaydetmek istediğinizden emin misiniz?';
+
+  @override
+  String get staffPaymentAdded => 'Ödeme kaydedildi.';
+
+  @override
+  String get noStaffForPayments => 'Aktif personel bulunamadı.';
+
+  @override
+  String get addExpense => 'Gider Ekle';
+
+  @override
+  String get editExpense => 'Gider Düzenle';
+
+  @override
+  String get expenseDescription => 'Açıklama';
+
+  @override
+  String get expenseDescriptionRequired => 'Açıklama zorunludur';
+
+  @override
+  String get expenseTotalAmount => 'Toplam Tutar (₺)';
+
+  @override
+  String get expenseTotalAmountRequired => 'Toplam tutar zorunludur';
+
+  @override
+  String get expenseTotalAmountInvalid => 'Geçerli bir tutar giriniz';
+
+  @override
+  String get expenseAdded => 'Gider kaydedildi.';
+
+  @override
+  String get expenseUpdated => 'Gider güncellendi.';
+
+  @override
+  String get expensePaymentAdded => 'Ödeme kaydedildi.';
+
+  @override
+  String get expenseMarkAsPaid => 'Ödendi';
+
+  @override
+  String get expenseMarkAsPaidConfirmTitle =>
+      'Bu gideri ödenmiş olarak işaretlemek istiyor musunuz?';
+
+  @override
+  String get expenseUndoPaid => 'Geri Al';
+
+  @override
+  String get expenseUndoPaidConfirmTitle =>
+      'Bu ödemeyi geri almak istediğinizden emin misiniz?';
+
+  @override
+  String get noExpenses => 'Henüz gider kaydı yok.';
+
+  @override
+  String get expenseStatusPending => 'Bekliyor';
+
+  @override
+  String get expenseStatusPartial => 'Kısmi Ödendi';
+
+  @override
+  String get expenseStatusPaid => 'Ödendi';
 }
