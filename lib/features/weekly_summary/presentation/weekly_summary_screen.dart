@@ -61,7 +61,7 @@ class WeeklySummaryScreen extends ConsumerWidget {
             recordsAsync.when(
               loading: () =>
                   const Center(child: CircularProgressIndicator()),
-              error: (e, _) => Text('$e'),
+              error: (e, _) => Text(l10n.genericError),
               data: (records) => records.isEmpty
                   ? Center(
                       child: Padding(
@@ -77,7 +77,7 @@ class WeeklySummaryScreen extends ConsumerWidget {
             // Açık bahşiş + Dağıtıldı butonu
             openTipsAsync.when(
               loading: () => const SizedBox.shrink(),
-              error: (e, _) => Text('$e'),
+              error: (e, _) => Text(l10n.genericError),
               data: (openTips) => _OpenTipsSection(
                 openTips: openTips,
                 locale: locale,
@@ -94,7 +94,7 @@ class WeeklySummaryScreen extends ConsumerWidget {
             const SizedBox(height: 8),
             recordsAsync.when(
               loading: () => const SizedBox.shrink(),
-              error: (e, _) => Text('$e'),
+              error: (e, _) => Text(l10n.genericError),
               data: (records) =>
                   DailySummaryList(records: records, weekRange: weekRange),
             ),
@@ -108,7 +108,7 @@ class WeeklySummaryScreen extends ConsumerWidget {
             const SizedBox(height: 8),
             staffDaysAsync.when(
               loading: () => const SizedBox.shrink(),
-              error: (e, _) => Text('$e'),
+              error: (e, _) => Text(l10n.genericError),
               data: (staffDays) => StaffDaysTable(staffDays: staffDays),
             ),
           ],

@@ -223,5 +223,7 @@
   "english": "İngilizce",
   "@english": { "description": "Dil seçeneği — İngilizce" },
   "openSettings": "Ayarlar",
-  "@openSettings": { "description": "Dashboard — ayarlar ikonu tooltip" }
+  "@openSettings": { "description": "Dashboard — ayarlar ikonu tooltip" },
+  "genericError": "Bir hata oluştu",
+  "@genericError": { "description": "Beklenmeyen bir hata olduğunda gösterilen genel mesaj" }
 }

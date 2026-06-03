@@ -488,4 +488,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get openSettings => 'Ayarlar';
+
+  @override
+  String get genericError => 'Bir hata oluştu';
 }

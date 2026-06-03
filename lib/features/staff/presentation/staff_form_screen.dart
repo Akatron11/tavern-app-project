@@ -88,7 +88,7 @@ class _StaffFormScreenState extends ConsumerState<StaffFormScreen> {
     ref.listen(staffControllerProvider, (_, next) {
       if (next is AsyncError) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(next.error.toString())),
+          SnackBar(content: Text(l10n.genericError)),
         );
       }
     });

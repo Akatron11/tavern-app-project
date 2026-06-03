@@ -19,7 +19,7 @@ class TodaySummaryCard extends ConsumerWidget {
         padding: const EdgeInsets.all(16),
         child: async.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (e, _) => Text('$e'),
+          error: (e, _) => Text(l10n.genericError),
           data: (record) {
             if (record == null) {
               return Text(

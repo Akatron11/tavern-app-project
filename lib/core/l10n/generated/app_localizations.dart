@@ -1027,6 +1027,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Ayarlar'**
   String get openSettings;
+
+  /// Beklenmeyen bir hata olduğunda gösterilen genel mesaj
+  ///
+  /// In tr, this message translates to:
+  /// **'Bir hata oluştu'**
+  String get genericError;
 }
 
 class _AppLocalizationsDelegate

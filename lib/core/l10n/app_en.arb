@@ -171,5 +171,6 @@
   "languageSection": "Language",
   "turkish": "Turkish",
   "english": "English",
-  "openSettings": "Settings"
+  "openSettings": "Settings",
+  "genericError": "An error occurred"
 }

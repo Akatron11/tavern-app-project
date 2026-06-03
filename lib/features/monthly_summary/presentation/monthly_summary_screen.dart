@@ -57,7 +57,7 @@ class MonthlySummaryScreen extends ConsumerWidget {
             reportAsync.when(
               loading: () =>
                   const Center(child: CircularProgressIndicator()),
-              error: (e, _) => Text('$e'),
+              error: (e, _) => Text(l10n.genericError),
               data: (report) => SummaryCardsSection(report: report),
             ),
             const SizedBox(height: 16),
@@ -71,7 +71,7 @@ class MonthlySummaryScreen extends ConsumerWidget {
             recordsAsync.when(
               loading: () =>
                   const Center(child: CircularProgressIndicator()),
-              error: (e, _) => Text('$e'),
+              error: (e, _) => Text(l10n.genericError),
               data: (records) => records.isEmpty
                   ? Center(
                       child: Padding(
@@ -93,7 +93,7 @@ class MonthlySummaryScreen extends ConsumerWidget {
             const SizedBox(height: 8),
             creditsAsync.when(
               loading: () => const SizedBox.shrink(),
-              error: (e, _) => Text('$e'),
+              error: (e, _) => Text(l10n.genericError),
               data: (credits) => MonthlyCreditTable(credits: credits),
             ),
           ],

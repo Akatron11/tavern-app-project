@@ -127,7 +127,7 @@ class _DailyRecordScreenState extends ConsumerState<DailyRecordScreen> {
     ref.listen(dailyRecordControllerProvider, (_, next) {
       if (next is AsyncError) {
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text(next.error.toString())));
+            .showSnackBar(SnackBar(content: Text(l10n.genericError)));
       }
     });
 
