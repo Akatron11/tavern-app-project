@@ -46,7 +46,7 @@ class CreditSaleTile extends StatelessWidget {
         label: Text(
           _statusLabel(l10n),
           style: TextStyle(
-              color: color, fontSize: 12, fontWeight: FontWeight.w500),
+              color: color, fontSize: 14, fontWeight: FontWeight.w500),
         ),
         backgroundColor: color.withAlpha(26),
         side: BorderSide.none,

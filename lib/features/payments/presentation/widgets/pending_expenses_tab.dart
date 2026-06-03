@@ -154,7 +154,7 @@ class PendingExpensesTab extends ConsumerWidget {
                   trailing: Chip(
                     label: Text(
                       _statusLabel(l10n, e.status),
-                      style: const TextStyle(fontSize: 12),
+                      style: const TextStyle(fontSize: 14),
                     ),
                     backgroundColor:
                         _statusColor(context, e.status).withValues(alpha: 0.15),

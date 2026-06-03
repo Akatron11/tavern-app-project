@@ -53,12 +53,12 @@ class MonthlyCreditTable extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
         child: Text(
           text,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
         ),
       );
 
   Widget _cell(String text) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-        child: Text(text, style: const TextStyle(fontSize: 13)),
+        child: Text(text, style: const TextStyle(fontSize: 14)),
       );
 }
