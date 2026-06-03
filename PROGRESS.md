@@ -1,7 +1,7 @@
 # Gilanlı Köy Meyhanesi — PROGRESS
 
 **Son güncelleme:** 2026-06-03
-**Aktif faz:** Faz 9 — Aylık Özet
+**Aktif faz:** Faz 10 — Ayarlar / Bildirim / i18n
 **Branch:** main
 **Plan:** [docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md](docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md)
 
@@ -20,7 +20,7 @@
 - [x] **Faz 6 — Ödemeler** ✅ tamam (89 test, analyze temiz)
 - [x] **Faz 7 — Dashboard** ✅ tamam (92 test, analyze temiz)
 - [x] **Faz 8 — Haftalık Özet** ✅ tamam (102 test, analyze temiz)
-- [ ] Faz 9 — Aylık Özet
+- [x] **Faz 9 — Aylık Özet** ✅ tamam (116 test, analyze temiz)
 - [ ] Faz 10 — Ayarlar / Bildirim / i18n
 - [ ] Faz 11 — Sağlamlaştırma & Cila
 
@@ -65,6 +65,7 @@
 - **2026-06-03** — ✅ **Faz 5 KABUL**: `credit_book_providers.dart` (CreditBookController: addSale/addPayment/markPaid/undoPaid) + `watchAll()` repo genişletmesi + `CreditListScreen` (liste, durum chip'i, BottomSheet aksiyonlar) + `CreditSaleTile` + `CreditForm` (ekleme/düzenleme) + `PaymentDialog` (kısmi ödeme, validasyon) + `/credit` router rotaları + ana ekran kartı + ARB TR/EN. `creditSaleRepositoryProvider` `credit_book_providers.dart`'a taşındı. TDD: 5 controller testi + 1 widget testi. `flutter test` **69/69 yeşil**, `flutter analyze` **0 issue**. Sıradaki: `phase-5-credit-book` → `main` (FF merge), sonra Faz 6.
 - **2026-06-03** — ✅ **Faz 7 KABUL**: `todayRecordProvider` (FutureProvider) + `TodaySummaryCard` (kayıt var/yok senaryoları) + `DashboardScreen` (tarih, selamlama, özet kart, 6 navigasyon kartı) + router `/` → DashboardScreen + `/weekly` `/monthly` placeholder rotalar + l10n TR/EN (5 yeni string) + `initializeDateFormatting` eklendi. `PlaceholderHomeScreen` silindi, `login_screen_test.dart` DashboardScreen'e güncellendi. `flutter test` **92/92 yeşil**, `flutter analyze` **0 issue**.
 - **2026-06-03** — ✅ **Faz 8 KABUL**: Plan yazıldı (`2026-06-03-faz-8-haftalik-ozet.md`), `phase-8-weekly-summary` dalı. ARB TR/EN (12 string) + `TipDistribution` model (TDD, 3 test) + `TipDistributionRepository` üçlüsü + `DailyRecordRepository.getByDateRange()` (TDD, 3 test) + `weekly_providers` (weekOffset/Notifier, currentWeekRange, weeklyRecords, openTips, staffDays, TipDistributionController) + `WeeklyBarChart` (fl_chart) + `DailySummaryList` + `StaffDaysTable` + `WeeklySummaryScreen` + router `/weekly` güncellendi. `flutter test` **102/102 yeşil**, `flutter analyze` **0 issue**.
+- **2026-06-03** — ✅ **Faz 9 KABUL**: Plan yazıldı (`2026-06-03-faz-9-aylik-ozet.md`), `phase-9-monthly-summary` dalı. ARB TR/EN (12 string) + `MonthlyReport` data class + TDD `MonthlyReportCalculator` (5 test, §3.5) + `CreditSaleRepository.getByDateRange` (abstract + Firestore + Mock) + `monthly_providers` (offset/range/records/credits/wages/report, 5 test) + `MonthlyBarChart` (fl_chart) + `MonthlyCreditTable` + `SummaryCardsSection` (8 kart) + `MonthlySummaryScreen` + router `/monthly` güncellendi + `_PlaceholderScreen` silindi. `flutter test` **116/116 yeşil**, `flutter analyze` **0 issue**.
 
 ---
 
@@ -123,3 +124,18 @@
 - [x] T8: StaffDaysTable widget (ad, rol, gün)
 - [x] T9: WeeklySummaryScreen + router /weekly güncelleme
 - [x] T10: Widget testleri (4) + tam doğrulama (102 test, analyze temiz) + PROGRESS güncelleme
+
+---
+
+## Faz 9 — Adımlar
+
+- [x] T1: ARB TR/EN string'leri (12 yeni) + gen-l10n
+- [x] T2: MonthlyReport data class
+- [x] T3: TDD MonthlyReportCalculator (5 test, §3.5)
+- [x] T4: CreditSaleRepository.getByDateRange (abstract + Firestore + Mock)
+- [x] T5: monthly_providers (offset/range/records/credits/wages/report) + 5 provider testi
+- [x] T6: MonthlyBarChart widget (fl_chart, günlük ciro)
+- [x] T7: MonthlyCreditTable widget
+- [x] T8: SummaryCardsSection widget (8 kart)
+- [x] T9: MonthlySummaryScreen + router /monthly
+- [x] T10: Widget testleri (4) + tam doğrulama (116 test, analyze temiz) + PROGRESS güncelleme
