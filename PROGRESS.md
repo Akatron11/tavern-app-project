@@ -1,8 +1,8 @@
 # Gilanlı Köy Meyhanesi — PROGRESS
 
 **Son güncelleme:** 2026-06-03
-**Aktif faz:** Faz 7 — Dashboard
-**Branch:** phase-6-payments (main'e merge bekliyor)
+**Aktif faz:** Faz 8 — Haftalık Özet
+**Branch:** main
 **Plan:** [docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md](docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md)
 
 > Bu dosya her adım sonrası güncellenir.
@@ -18,7 +18,7 @@
 - [x] **Faz 4 — Günlük Kayıt** ✅ tamam (63 test, analyze temiz)
 - [x] **Faz 5 — Veresiye Defteri** ✅ tamam (69 test, analyze temiz)
 - [x] **Faz 6 — Ödemeler** ✅ tamam (89 test, analyze temiz)
-- [ ] Faz 7 — Dashboard
+- [x] **Faz 7 — Dashboard** ✅ tamam (92 test, analyze temiz)
 - [ ] Faz 8 — Haftalık Özet
 - [ ] Faz 9 — Aylık Özet
 - [ ] Faz 10 — Ayarlar / Bildirim / i18n
@@ -63,6 +63,7 @@
 - **2026-06-03** — ✅ **Faz 6 KABUL**: PayrollCalculator (TDD, §3.3) + StaffPayment + PendingExpense modelleri + PaymentRepository (abstract/Firestore/Mock) + DailyRecordRepository.getAll() + payments_providers (PaymentsController) + StaffPaymentsTab (tahakkuk/ödeme/kalan) + PendingExpensesTab (gider CRUD + kısmi ödeme) + PaymentsScreen (2 sekme) + router + ana ekran kartı + l10n TR/EN. `flutter test` **89/89 yeşil**, `flutter analyze` **0 issue**.
 - **2026-06-03** — Faz 6 başladı: `superpowers:writing-plans` ile ayrıntılı TDD planı yazıldı ([docs/superpowers/plans/2026-06-03-faz-6-odemeler.md](docs/superpowers/plans/2026-06-03-faz-6-odemeler.md)), `phase-6-payments` dalı açıldı.
 - **2026-06-03** — ✅ **Faz 5 KABUL**: `credit_book_providers.dart` (CreditBookController: addSale/addPayment/markPaid/undoPaid) + `watchAll()` repo genişletmesi + `CreditListScreen` (liste, durum chip'i, BottomSheet aksiyonlar) + `CreditSaleTile` + `CreditForm` (ekleme/düzenleme) + `PaymentDialog` (kısmi ödeme, validasyon) + `/credit` router rotaları + ana ekran kartı + ARB TR/EN. `creditSaleRepositoryProvider` `credit_book_providers.dart`'a taşındı. TDD: 5 controller testi + 1 widget testi. `flutter test` **69/69 yeşil**, `flutter analyze` **0 issue**. Sıradaki: `phase-5-credit-book` → `main` (FF merge), sonra Faz 6.
+- **2026-06-03** — ✅ **Faz 7 KABUL**: `todayRecordProvider` (FutureProvider) + `TodaySummaryCard` (kayıt var/yok senaryoları) + `DashboardScreen` (tarih, selamlama, özet kart, 6 navigasyon kartı) + router `/` → DashboardScreen + `/weekly` `/monthly` placeholder rotalar + l10n TR/EN (5 yeni string) + `initializeDateFormatting` eklendi. `PlaceholderHomeScreen` silindi, `login_screen_test.dart` DashboardScreen'e güncellendi. `flutter test` **92/92 yeşil**, `flutter analyze` **0 issue**.
 
 ---
 
@@ -95,3 +96,14 @@
 - [x] T6: `CreditSaleTile` + `CreditListScreen` (liste, durum chip, BottomSheet aksiyonlar)
 - [x] T7: Router `/credit`, `/credit/add`, `/credit/edit` + ana ekran kartı
 - [x] T8: Widget testi (CreditListScreen), tam doğrulama (69 test yeşil, analyze temiz)
+
+---
+
+## Faz 7 — Adımlar
+
+- [x] T1: `phase-7-dashboard` branch + l10n TR/EN (todaySummary, noRecordToday, workingStaffCountLabel, openWeeklySummary, openMonthlySummary)
+- [x] T2: `dashboard_providers.dart` (todayRecordProvider)
+- [x] T3: `TodaySummaryCard` widget + 2 widget testi (kayıt yok / kayıt var)
+- [x] T4: `DashboardScreen` (tarih+selamlama+özet+6 kart) + router `/` → Dashboard + `/weekly` `/monthly` placeholder + `initializeDateFormatting` + PlaceholderHomeScreen silindi
+- [x] T5: DashboardScreen navigasyon widget testi (selamlama + 6 kart)
+- [x] T6: Tam doğrulama (92 test yeşil, analyze temiz) + PROGRESS güncelleme + merge
