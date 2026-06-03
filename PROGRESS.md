@@ -1,7 +1,7 @@
 # Gilanlı Köy Meyhanesi — PROGRESS
 
-**Son güncelleme:** 2026-06-03
-**Aktif faz:** Faz 10 — Ayarlar / Bildirim / i18n
+**Son güncelleme:** 2026-06-04
+**Aktif faz:** Faz 11 — Sağlamlaştırma & Cila
 **Branch:** main
 **Plan:** [docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md](docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md)
 
@@ -21,7 +21,7 @@
 - [x] **Faz 7 — Dashboard** ✅ tamam (92 test, analyze temiz)
 - [x] **Faz 8 — Haftalık Özet** ✅ tamam (102 test, analyze temiz)
 - [x] **Faz 9 — Aylık Özet** ✅ tamam (116 test, analyze temiz)
-- [ ] Faz 10 — Ayarlar / Bildirim / i18n
+- [x] **Faz 10 — Ayarlar / Bildirim / i18n** ✅ tamam (129 test, analyze temiz, debug APK derlendi)
 - [ ] Faz 11 — Sağlamlaştırma & Cila
 
 ---
@@ -66,6 +66,7 @@
 - **2026-06-03** — ✅ **Faz 7 KABUL**: `todayRecordProvider` (FutureProvider) + `TodaySummaryCard` (kayıt var/yok senaryoları) + `DashboardScreen` (tarih, selamlama, özet kart, 6 navigasyon kartı) + router `/` → DashboardScreen + `/weekly` `/monthly` placeholder rotalar + l10n TR/EN (5 yeni string) + `initializeDateFormatting` eklendi. `PlaceholderHomeScreen` silindi, `login_screen_test.dart` DashboardScreen'e güncellendi. `flutter test` **92/92 yeşil**, `flutter analyze` **0 issue**.
 - **2026-06-03** — ✅ **Faz 8 KABUL**: Plan yazıldı (`2026-06-03-faz-8-haftalik-ozet.md`), `phase-8-weekly-summary` dalı. ARB TR/EN (12 string) + `TipDistribution` model (TDD, 3 test) + `TipDistributionRepository` üçlüsü + `DailyRecordRepository.getByDateRange()` (TDD, 3 test) + `weekly_providers` (weekOffset/Notifier, currentWeekRange, weeklyRecords, openTips, staffDays, TipDistributionController) + `WeeklyBarChart` (fl_chart) + `DailySummaryList` + `StaffDaysTable` + `WeeklySummaryScreen` + router `/weekly` güncellendi. `flutter test` **102/102 yeşil**, `flutter analyze` **0 issue**.
 - **2026-06-03** — ✅ **Faz 9 KABUL**: Plan yazıldı (`2026-06-03-faz-9-aylik-ozet.md`), `phase-9-monthly-summary` dalı. ARB TR/EN (12 string) + `MonthlyReport` data class + TDD `MonthlyReportCalculator` (5 test, §3.5) + `CreditSaleRepository.getByDateRange` (abstract + Firestore + Mock) + `monthly_providers` (offset/range/records/credits/wages/report, 5 test) + `MonthlyBarChart` (fl_chart) + `MonthlyCreditTable` + `SummaryCardsSection` (8 kart) + `MonthlySummaryScreen` + router `/monthly` güncellendi + `_PlaceholderScreen` silindi. `flutter test` **116/116 yeşil**, `flutter analyze` **0 issue**.
+- **2026-06-04** — ✅ **Faz 10 KABUL**: Plan yazıldı (`2026-06-03-faz-10-ayarlar-bildirim-i18n.md`), `phase-10-settings` dalı. ARB TR/EN (8 string) + `sharedPreferencesProvider` + `AppSettings` modeli (TDD 3) + `nextInstanceOfTime` (TDD 3) + `NotificationService` üçlüsü (abstract/Local/Mock; flutter_local_notifications 21 **named-parametre** API'sine uyarlandı: `initialize(settings:)`, `zonedSchedule(id:/scheduledDate:/notificationDetails:)`) + `SettingsNotifier`/`localeProvider` orkestrasyonu (TDD 5) + Android **desugaring** (desugar_jdk_libs 2.1.4) & manifest izinleri/boot receiver + main/app kablolaması (prefs override, notif init, dil **anında** uygulanır, açılışta `bootstrapNotifications`) + `SettingsScreen` (dil/bildirim/çıkış, `RadioGroup`) + `/settings` + dashboard dişli ikonu (çıkış Ana ekrandan **Ayarlar'a taşındı**) + ölü `Role.displayName` (hardcoded TR) kaldırıldı + `widget_test.dart` override'ları güncellendi. `flutter test` **129/129 yeşil**, `flutter analyze` **0 issue**, `flutter build apk --debug` **başarılı**. Sıradaki: `phase-10-settings` → `main` (FF merge), sonra Faz 11.
 
 ---
 
@@ -139,3 +140,19 @@
 - [x] T8: SummaryCardsSection widget (8 kart)
 - [x] T9: MonthlySummaryScreen + router /monthly
 - [x] T10: Widget testleri (4) + tam doğrulama (116 test, analyze temiz) + PROGRESS güncelleme
+
+---
+
+## Faz 10 — Adımlar
+
+- [x] T1: ARB TR/EN string'leri (8 yeni) + gen-l10n
+- [x] T2: sharedPreferencesProvider (main override)
+- [x] T3: AppSettings modeli + fromPrefs/copyWith (TDD, 3 test)
+- [x] T4: nextInstanceOfTime saf yardımcı (TDD, 3 test)
+- [x] T5: NotificationService üçlüsü (abstract/Local/Mock) — fln 21 named-param API
+- [x] T6: SettingsNotifier + localeProvider orkestrasyon (TDD, 5 test)
+- [x] T7: Android desugaring (desugar_jdk_libs 2.1.4) + manifest izinleri/boot receiver
+- [x] T8: main.dart + app.dart kablolaması (prefs override, notif init, locale izleme, açılış bootstrap) + widget_test override güncellemesi
+- [x] T9: SettingsScreen (dil/bildirim/çıkış, RadioGroup) + /settings rotası + dashboard dişli ikonu (2 widget test)
+- [x] T10: Hardcoded string taraması — ölü Role.displayName kaldırıldı
+- [x] T11: Tam doğrulama (129 test yeşil, analyze temiz, debug APK derlendi) + PROGRESS + merge
