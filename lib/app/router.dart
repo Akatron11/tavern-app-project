@@ -13,6 +13,7 @@ import '../features/payments/domain/pending_expense.dart';
 import '../features/payments/presentation/expense_form_screen.dart';
 import '../features/payments/presentation/payments_screen.dart';
 import '../features/staff/presentation/staff_list_screen.dart';
+import '../features/weekly_summary/presentation/weekly_summary_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   final router = GoRouter(
@@ -74,8 +75,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/weekly',
-        builder: (context, state) =>
-            const _PlaceholderScreen(title: 'Haftalık Özet'),
+        builder: (context, state) => const WeeklySummaryScreen(),
       ),
       GoRoute(
         path: '/monthly',
