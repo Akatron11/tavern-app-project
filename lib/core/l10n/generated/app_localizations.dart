@@ -805,6 +805,36 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Ödendi'**
   String get expenseStatusPaid;
+
+  /// Bugünün özet kart başlığı
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugünün Özeti'**
+  String get todaySummary;
+
+  /// Bugün kayıt yoksa gösterilen metin
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugün kayıt girilmemiş.'**
+  String get noRecordToday;
+
+  /// Dashboard özet — çalışan personel sayısı etiketi
+  ///
+  /// In tr, this message translates to:
+  /// **'Çalışan Personel'**
+  String get workingStaffCountLabel;
+
+  /// Dashboard hızlı erişim — haftalık özet kartı
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık Özet'**
+  String get openWeeklySummary;
+
+  /// Dashboard hızlı erişim — aylık özet kartı
+  ///
+  /// In tr, this message translates to:
+  /// **'Aylık Özet'**
+  String get openMonthlySummary;
 }
 
 class _AppLocalizationsDelegate

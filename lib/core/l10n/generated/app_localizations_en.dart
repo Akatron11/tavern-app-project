@@ -374,4 +374,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get expenseStatusPaid => 'Paid';
+
+  @override
+  String get todaySummary => 'Today\'s Summary';
+
+  @override
+  String get noRecordToday => 'No record entered for today.';
+
+  @override
+  String get workingStaffCountLabel => 'Working Staff';
+
+  @override
+  String get openWeeklySummary => 'Weekly Summary';
+
+  @override
+  String get openMonthlySummary => 'Monthly Summary';
 }

@@ -374,4 +374,19 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get expenseStatusPaid => 'Ödendi';
+
+  @override
+  String get todaySummary => 'Bugünün Özeti';
+
+  @override
+  String get noRecordToday => 'Bugün kayıt girilmemiş.';
+
+  @override
+  String get workingStaffCountLabel => 'Çalışan Personel';
+
+  @override
+  String get openWeeklySummary => 'Haftalık Özet';
+
+  @override
+  String get openMonthlySummary => 'Aylık Özet';
 }

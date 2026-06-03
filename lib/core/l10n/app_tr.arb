@@ -149,5 +149,16 @@
   "noExpenses": "Henüz gider kaydı yok.",
   "expenseStatusPending": "Bekliyor",
   "expenseStatusPartial": "Kısmi Ödendi",
-  "expenseStatusPaid": "Ödendi"
+  "expenseStatusPaid": "Ödendi",
+
+  "todaySummary": "Bugünün Özeti",
+  "@todaySummary": { "description": "Bugünün özet kart başlığı" },
+  "noRecordToday": "Bugün kayıt girilmemiş.",
+  "@noRecordToday": { "description": "Bugün kayıt yoksa gösterilen metin" },
+  "workingStaffCountLabel": "Çalışan Personel",
+  "@workingStaffCountLabel": { "description": "Dashboard özet — çalışan personel sayısı etiketi" },
+  "openWeeklySummary": "Haftalık Özet",
+  "@openWeeklySummary": { "description": "Dashboard hızlı erişim — haftalık özet kartı" },
+  "openMonthlySummary": "Aylık Özet",
+  "@openMonthlySummary": { "description": "Dashboard hızlı erişim — aylık özet kartı" }
 }

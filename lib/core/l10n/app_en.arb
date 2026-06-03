@@ -126,5 +126,11 @@
   "noExpenses": "No expense records yet.",
   "expenseStatusPending": "Pending",
   "expenseStatusPartial": "Partially Paid",
-  "expenseStatusPaid": "Paid"
+  "expenseStatusPaid": "Paid",
+
+  "todaySummary": "Today's Summary",
+  "noRecordToday": "No record entered for today.",
+  "workingStaffCountLabel": "Working Staff",
+  "openWeeklySummary": "Weekly Summary",
+  "openMonthlySummary": "Monthly Summary"
 }
