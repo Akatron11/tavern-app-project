@@ -13,6 +13,7 @@ import '../features/payments/presentation/expense_form_screen.dart';
 import '../features/payments/presentation/payments_screen.dart';
 import '../features/staff/presentation/staff_list_screen.dart';
 import '../features/monthly_summary/presentation/monthly_summary_screen.dart';
+import '../features/settings/presentation/settings_screen.dart';
 import '../features/weekly_summary/presentation/weekly_summary_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
@@ -80,6 +81,10 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/monthly',
         builder: (context, state) => const MonthlySummaryScreen(),
+      ),
+      GoRoute(
+        path: '/settings',
+        builder: (context, state) => const SettingsScreen(),
       ),
     ],
   );

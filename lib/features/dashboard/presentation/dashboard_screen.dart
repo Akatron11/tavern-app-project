@@ -4,34 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart' as intl;
 
 import '../../../core/l10n/generated/app_localizations.dart';
-import '../../auth/application/auth_providers.dart';
 import 'widgets/today_summary_card.dart';
 
 class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
-
-  Future<void> _confirmLogout(BuildContext context, WidgetRef ref) async {
-    final l10n = AppLocalizations.of(context);
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l10n.logoutConfirmTitle),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(ctx).pop(false),
-            child: Text(l10n.cancel),
-          ),
-          TextButton(
-            onPressed: () => Navigator.of(ctx).pop(true),
-            child: Text(l10n.logout),
-          ),
-        ],
-      ),
-    );
-    if (confirmed == true) {
-      await ref.read(logoutControllerProvider.notifier).signOut();
-    }
-  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -45,9 +21,9 @@ class DashboardScreen extends ConsumerWidget {
         title: Text(l10n.appTitle),
         actions: [
           IconButton(
-            tooltip: l10n.logout,
-            icon: const Icon(Icons.logout),
-            onPressed: () => _confirmLogout(context, ref),
+            tooltip: l10n.openSettings,
+            icon: const Icon(Icons.settings),
+            onPressed: () => context.push('/settings'),
           ),
         ],
       ),
