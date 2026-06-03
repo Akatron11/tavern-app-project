@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gilanli_meyhane/features/daily_record/domain/daily_record.dart';
 import 'package:gilanli_meyhane/features/payments/domain/payroll_calculator.dart';
-import 'package:gilanli_meyhane/features/payments/domain/payroll_summary.dart';
 import 'package:gilanli_meyhane/features/staff/domain/staff.dart';
 
 DailyRecord _rec(String id, DateTime date, List<String> staffIds) => DailyRecord(
