@@ -7,21 +7,6 @@ enum Role {
   kasiyer,
   diger;
 
-  String get displayName {
-    switch (this) {
-      case Role.garson:
-        return 'Garson';
-      case Role.asci:
-        return 'Aşçı';
-      case Role.barmen:
-        return 'Barmen';
-      case Role.kasiyer:
-        return 'Kasiyer';
-      case Role.diger:
-        return 'Diğer';
-    }
-  }
-
   static Role fromString(String value) {
     return Role.values.firstWhere(
       (r) => r.name == value,
