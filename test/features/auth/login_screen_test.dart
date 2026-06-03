@@ -6,11 +6,15 @@ import 'package:gilanli_meyhane/core/l10n/generated/app_localizations.dart';
 import 'package:gilanli_meyhane/features/auth/application/auth_providers.dart';
 import 'package:gilanli_meyhane/features/auth/data/mock_auth_repository.dart';
 import 'package:gilanli_meyhane/features/auth/presentation/login_screen.dart';
-import 'package:gilanli_meyhane/app/placeholder_home_screen.dart';
+import 'package:gilanli_meyhane/features/dashboard/application/dashboard_providers.dart';
+import 'package:gilanli_meyhane/features/dashboard/presentation/dashboard_screen.dart';
 
 Widget buildTestApp(MockAuthRepository mockRepo) {
   return ProviderScope(
-    overrides: [authRepositoryProvider.overrideWithValue(mockRepo)],
+    overrides: [
+      authRepositoryProvider.overrideWithValue(mockRepo),
+      todayRecordProvider.overrideWith((_) async => null),
+    ],
     child: Consumer(
       builder: (context, ref, _) {
         final router = ref.watch(routerProvider);
@@ -81,7 +85,7 @@ void main() {
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle();
 
-      expect(find.byType(PlaceholderHomeScreen), findsOneWidget);
+      expect(find.byType(DashboardScreen), findsOneWidget);
 
       mockRepo.dispose();
     });

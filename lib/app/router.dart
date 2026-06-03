@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -7,11 +8,11 @@ import '../features/credit_book/domain/credit_sale.dart';
 import '../features/credit_book/presentation/credit_form.dart';
 import '../features/credit_book/presentation/credit_list_screen.dart';
 import '../features/daily_record/presentation/daily_record_screen.dart';
+import '../features/dashboard/presentation/dashboard_screen.dart';
 import '../features/payments/domain/pending_expense.dart';
 import '../features/payments/presentation/expense_form_screen.dart';
 import '../features/payments/presentation/payments_screen.dart';
 import '../features/staff/presentation/staff_list_screen.dart';
-import 'placeholder_home_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   final router = GoRouter(
@@ -19,7 +20,6 @@ final routerProvider = Provider<GoRouter>((ref) {
     redirect: (context, state) {
       final authState = ref.read(authStateChangesProvider);
 
-      // Henüz yükleniyorsa yönlendirme yapma
       if (authState.isLoading) return null;
 
       final isLoggedIn = authState.asData?.value != null;
@@ -36,7 +36,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/',
-        builder: (context, state) => const PlaceholderHomeScreen(),
+        builder: (context, state) => const DashboardScreen(),
       ),
       GoRoute(
         path: '/staff',
@@ -72,6 +72,16 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) =>
             ExpenseFormScreen(expense: state.extra as PendingExpense),
       ),
+      GoRoute(
+        path: '/weekly',
+        builder: (context, state) =>
+            const _PlaceholderScreen(title: 'Haftalık Özet'),
+      ),
+      GoRoute(
+        path: '/monthly',
+        builder: (context, state) =>
+            const _PlaceholderScreen(title: 'Aylık Özet'),
+      ),
     ],
   );
 
@@ -80,3 +90,16 @@ final routerProvider = Provider<GoRouter>((ref) {
 
   return router;
 });
+
+class _PlaceholderScreen extends StatelessWidget {
+  const _PlaceholderScreen({required this.title});
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: const Center(child: Text('Yakında...')),
+    );
+  }
+}
