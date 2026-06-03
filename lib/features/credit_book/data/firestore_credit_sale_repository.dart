@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../../../core/utils/date_utils.dart';
 import '../domain/credit_sale.dart';
 import 'credit_sale_repository.dart';
 
@@ -34,5 +35,17 @@ class FirestoreCreditSaleRepository implements CreditSaleRepository {
     final doc = await _col.doc(id).get();
     if (!doc.exists || doc.data() == null) return null;
     return CreditSale.fromMap(doc.id, doc.data()!);
+  }
+
+  @override
+  Future<List<CreditSale>> getByDateRange(DateRange range) async {
+    final snap = await _col
+        .where('date',
+            isGreaterThanOrEqualTo: range.start.toIso8601String())
+        .where('date', isLessThan: range.end.toIso8601String())
+        .get();
+    return snap.docs
+        .map((d) => CreditSale.fromMap(d.id, d.data()))
+        .toList();
   }
 }

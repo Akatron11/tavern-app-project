@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import '../../../core/utils/date_utils.dart';
 import '../domain/credit_sale.dart';
 import 'credit_sale_repository.dart';
 
@@ -34,6 +35,14 @@ class MockCreditSaleRepository implements CreditSaleRepository {
 
   @override
   Future<CreditSale?> getById(String id) async => store[id];
+
+  @override
+  Future<List<CreditSale>> getByDateRange(DateRange range) async {
+    return store.values
+        .where((c) =>
+            !c.date.isBefore(range.start) && c.date.isBefore(range.end))
+        .toList();
+  }
 
   void dispose() => _controller.close();
 }
