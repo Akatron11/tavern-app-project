@@ -225,5 +225,7 @@
   "openSettings": "Ayarlar",
   "@openSettings": { "description": "Dashboard — ayarlar ikonu tooltip" },
   "genericError": "Bir hata oluştu",
-  "@genericError": { "description": "Beklenmeyen bir hata olduğunda gösterilen genel mesaj" }
+  "@genericError": { "description": "Beklenmeyen bir hata olduğunda gösterilen genel mesaj" },
+  "requiredField": "Bu alan boş bırakılamaz",
+  "@requiredField": { "description": "Zorunlu sayısal alan boş bırakıldığında hata (0 girilebilir)" }
 }

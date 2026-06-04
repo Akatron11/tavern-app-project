@@ -72,4 +72,30 @@ void main() {
       '10.000 ₺',
     );
   });
+
+  testWidgets('BUG-02: zorunlu alanlar boşken kayıt engellenir', (tester) async {
+    tester.view.physicalSize = const Size(1200, 4000);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    final dailyRepo = MockDailyRecordRepository();
+    await tester.pumpWidget(buildApp(
+      dailyRepo: dailyRepo,
+      creditRepo: MockCreditSaleRepository(),
+      staffRepo: MockStaffRepository(),
+    ));
+    await tester.pumpAndSettle();
+
+    final l10n = await AppLocalizations.delegate.load(const Locale('tr'));
+
+    // Hiçbir alan doldurulmadan Kaydet'e bas.
+    await tester.tap(find.widgetWithText(ElevatedButton, l10n.save));
+    await tester.pumpAndSettle();
+
+    // Zorunlu alan hatası görünür; onay dialog'u açılmaz; kayıt yazılmaz.
+    expect(find.text(l10n.requiredField), findsWidgets);
+    expect(find.text(l10n.saveConfirmTitle), findsNothing);
+    expect(dailyRepo.store, isEmpty);
+  });
 }

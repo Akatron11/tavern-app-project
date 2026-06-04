@@ -1033,6 +1033,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Bir hata oluştu'**
   String get genericError;
+
+  /// Zorunlu sayısal alan boş bırakıldığında hata (0 girilebilir)
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu alan boş bırakılamaz'**
+  String get requiredField;
 }
 
 class _AppLocalizationsDelegate

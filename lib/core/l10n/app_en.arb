@@ -172,5 +172,6 @@
   "turkish": "Turkish",
   "english": "English",
   "openSettings": "Settings",
-  "genericError": "An error occurred"
+  "genericError": "An error occurred",
+  "requiredField": "This field cannot be empty"
 }

@@ -491,4 +491,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get genericError => 'Bir hata oluştu';
+
+  @override
+  String get requiredField => 'Bu alan boş bırakılamaz';
 }

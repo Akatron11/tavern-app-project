@@ -124,6 +124,12 @@ class _DailyRecordScreenState extends ConsumerState<DailyRecordScreen> {
     final l10n = AppLocalizations.of(context);
     final saving = ref.watch(dailyRecordControllerProvider).isLoading;
 
+    // BUG-02: zorunlu sayısal alanlar boş bırakılamaz (0 girilebilir).
+    String? requiredValidator(String? v) {
+      final digits = (v ?? '').replaceAll(RegExp(r'[^0-9]'), '');
+      return digits.isEmpty ? l10n.requiredField : null;
+    }
+
     ref.listen(dailyRecordControllerProvider, (_, next) {
       if (next is AsyncError) {
         ScaffoldMessenger.of(context)
@@ -151,18 +157,27 @@ class _DailyRecordScreenState extends ConsumerState<DailyRecordScreen> {
               ),
               const SizedBox(height: AppSizes.spaceSm),
 
-              MoneyInputField(controller: _revenueCtrl, label: l10n.revenue),
+              MoneyInputField(
+                  controller: _revenueCtrl,
+                  label: l10n.revenue,
+                  validator: requiredValidator),
               const SizedBox(height: AppSizes.spaceMd),
               MoneyInputField(
-                  controller: _creditCardCtrl, label: l10n.creditCardTotal),
+                  controller: _creditCardCtrl,
+                  label: l10n.creditCardTotal,
+                  validator: requiredValidator),
               const SizedBox(height: AppSizes.spaceMd),
               MoneyInputField(controller: _tipsCtrl, label: l10n.totalTips),
               const SizedBox(height: AppSizes.spaceMd),
               MoneyInputField(
-                  controller: _ownerExpenseCtrl, label: l10n.ownerExpense),
+                  controller: _ownerExpenseCtrl,
+                  label: l10n.ownerExpense,
+                  validator: requiredValidator),
               const SizedBox(height: AppSizes.spaceMd),
               MoneyInputField(
-                  controller: _cashExpenseCtrl, label: l10n.cashExpense),
+                  controller: _cashExpenseCtrl,
+                  label: l10n.cashExpense,
+                  validator: requiredValidator),
               const SizedBox(height: AppSizes.spaceMd),
               MoneyInputField(
                   controller: _creditSaleCtrl, label: l10n.creditSale),
@@ -185,6 +200,7 @@ class _DailyRecordScreenState extends ConsumerState<DailyRecordScreen> {
                 controller: _previousDayCashCtrl,
                 label: l10n.previousDayCash,
                 textInputAction: TextInputAction.done,
+                validator: requiredValidator,
               ),
               const SizedBox(height: AppSizes.spaceLg),
 
