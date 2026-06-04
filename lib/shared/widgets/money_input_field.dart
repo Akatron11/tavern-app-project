@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 
 import '../../core/money/money.dart';
 
-/// Tam **lira** girişi alan, yalnızca rakam kabul eden para alanı.
-/// Saklama kuruş bazlıdır; [kurusOf] ile kuruş değeri okunur.
-class MoneyInputField extends StatelessWidget {
+/// Tam **lira** girişi alan, binlik ayraçlı (yerel biçim) para alanı.
+///
+/// Saklama kuruş bazlıdır; [kurusOf] ile kuruş değeri okunur (ayraçlar yok
+/// sayılır). Hem kullanıcı yazarken hem de programatik olarak (örn. düzenlemede
+/// yüklenen) ayarlanan değerler yerel binlik ayracıyla gruplanır (BUG-15).
+class MoneyInputField extends StatefulWidget {
   const MoneyInputField({
     super.key,
     required this.controller,
@@ -21,23 +24,62 @@ class MoneyInputField extends StatelessWidget {
   final String? Function(String?)? validator;
   final TextInputAction textInputAction;
 
-  /// Alandaki tam lira değerini kuruşa çevirir (boş/eksikse 0).
-  static int kurusOf(TextEditingController controller) =>
-      liraToKurus(int.tryParse(controller.text.trim()) ?? 0);
+  /// Yalnızca rakamları alıp kuruşa çevirir (binlik ayraçları yok sayar).
+  static int kurusOf(TextEditingController controller) {
+    final digits = controller.text.replaceAll(RegExp(r'[^0-9]'), '');
+    return liraToKurus(int.tryParse(digits) ?? 0);
+  }
+
+  @override
+  State<MoneyInputField> createState() => _MoneyInputFieldState();
+}
+
+class _MoneyInputFieldState extends State<MoneyInputField> {
+  @override
+  void initState() {
+    super.initState();
+    widget.controller.addListener(_reformat);
+    // İlk frame sonrası mevcut (programatik) değeri grupla.
+    WidgetsBinding.instance.addPostFrameCallback((_) => _reformat());
+  }
+
+  @override
+  void dispose() {
+    widget.controller.removeListener(_reformat);
+    super.dispose();
+  }
+
+  /// Controller metnindeki rakamları yerel binlik ayracıyla yeniden gruplar.
+  /// Sonuç mevcut metinle aynıysa hiçbir şey yapmaz (özyineleme önlenir).
+  void _reformat() {
+    if (!mounted) return;
+    final text = widget.controller.text;
+    final digits = text.replaceAll(RegExp(r'[^0-9]'), '');
+    final grouped = digits.isEmpty
+        ? ''
+        : NumberFormat.decimalPattern(
+                Localizations.localeOf(context).toString())
+            .format(int.parse(digits));
+    if (grouped != text) {
+      widget.controller.value = TextEditingValue(
+        text: grouped,
+        selection: TextSelection.collapsed(offset: grouped.length),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
+      controller: widget.controller,
       decoration: InputDecoration(
-        labelText: label,
+        labelText: widget.label,
         suffixText: '₺',
       ),
       keyboardType: const TextInputType.numberWithOptions(decimal: false),
-      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      textInputAction: textInputAction,
-      validator: validator,
-      onChanged: onChanged,
+      textInputAction: widget.textInputAction,
+      validator: widget.validator,
+      onChanged: widget.onChanged,
     );
   }
 }
