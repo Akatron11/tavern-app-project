@@ -44,5 +44,11 @@ class MockCreditSaleRepository implements CreditSaleRepository {
         .toList();
   }
 
+  @override
+  Future<void> delete(String id) async {
+    store.remove(id);
+    _notify();
+  }
+
   void dispose() => _controller.close();
 }

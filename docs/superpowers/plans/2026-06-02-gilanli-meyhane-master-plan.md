@@ -34,7 +34,7 @@ Aşağıdakiler 2026-06-02'de onaylandı. Madde 7 onayla **güncellendi**.
 
 1. **Platform hedefi = Android (öncelikli).** Geliştirme makinesi Windows 10. **iOS derlemesi macOS gerektirir → bu makinede kapsam dışı** (Mac/CI varsa eklenebilir). MVP Android üzerinde "done" sayılır. ✅
 2. **Personel ücret tahakkuku türetilir.** "Çalışılan gün" ve "toplam ücret" tek kaynaktan — `dailyRecords.workingStaffIds` + `staff.wageHistory` — `PayrollCalculator` ile **hesaplanır**. `payments` (type=staff) yalnızca *yapılan ödemeleri* tutar; `kalan = tahakkuk − ödenen`. ✅
-3. **Veresiye mutabakatı.** Günlük kayıttaki veresiye düzenlenince bağlı `creditSales` dokümanı güncellenir: `totalAmount` yenilenir, `remainingAmount = max(0, totalAmount − Σpayments)`, `status` yeniden hesaplanır. Veresiye sıfırlanırsa bağlı kayıt `paid`/0 olur (silme yok). ✅
+3. **Veresiye mutabakatı.** Günlük kayıttaki veresiye düzenlenince bağlı `creditSales` dokümanı güncellenir: `totalAmount` yenilenir, `remainingAmount = max(0, totalAmount − Σpayments)`, `status` yeniden hesaplanır. Veresiye sıfırlanırsa: **ödeme yoksa bağlı kayıt silinir** (yanlış giriş düzeltmesi — QA Tur 1 BUG-09/BUG-01, 2026-06-04); ödeme geçmişi varsa `paid`/0'a mutabık kılınır (silme yok). ✅
 4. **Ayarlar ekranı eklenir.** `features/settings` (dil, bildirim saati, bildirim aç/kapa, çıkış). ✅
 5. **Bildirim (MVP).** `flutter_local_notifications` ile kullanıcı saatinde **günlük tekrarlı yerel hatırlatma**. "Kayıt zaten girildiyse gösterme" tam koşullu sürüm v2. ✅
 6. **Auth.** Yalnızca login (e-posta/şifre); Kemal hesabı Faz 1'de Firebase konsolundan oluşturulur; uygulama içi kayıt ekranı yok. Oturum kalıcı. Çıkışta onay dialog'u. ✅

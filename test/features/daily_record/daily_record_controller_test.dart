@@ -99,16 +99,30 @@ void main() {
     expect(sale.remainingAmount, 60000);
   });
 
-  test('düzenlemede veresiye sıfırlanınca bağlı CreditSale paid/0 olur (silme yok)', () async {
+  test('BUG-01: veresiye sıfırlanınca (ödeme yoksa) bağlı CreditSale silinir — "ödendi" yapılmaz', () async {
     await save(date: DateTime(2026, 6, 3), creditSales: 40000, creditCustomerName: 'Ahmet');
     await save(date: DateTime(2026, 6, 3), creditSales: 0);
 
+    // Yanlış girilen veresiye düzeltildi → "ödendi" değil, kayıt tamamen silinir.
+    expect(creditRepo.store, isEmpty);
+    expect(dailyRepo.store['2026-06-03']!.linkedCreditSaleId, isNull);
+  });
+
+  test('veresiye sıfırlansa da ödeme geçmişi varsa kayıt korunur', () async {
+    await save(date: DateTime(2026, 6, 3), creditSales: 40000, creditCustomerName: 'Ahmet');
+    final saleId = dailyRepo.store['2026-06-03']!.linkedCreditSaleId!;
+    // Krediye kısmi ödeme işle (credit book üzerinden yapılmış gibi).
+    await creditRepo.update(creditRepo.store[saleId]!.copyWith(
+      payments: [CreditPayment(amount: 10000, date: DateTime(2026, 6, 3))],
+      remainingAmount: 30000,
+      status: CreditStatus.partial,
+    ));
+
+    await save(date: DateTime(2026, 6, 3), creditSales: 0);
+
+    // Ödeme geçmişi olan kayıt silinmez.
     expect(creditRepo.store.length, 1);
-    final sale = creditRepo.store.values.first;
-    expect(sale.remainingAmount, 0);
-    expect(sale.status, CreditStatus.paid);
-    // bağlı referans korunur
-    expect(dailyRepo.store['2026-06-03']!.linkedCreditSaleId, sale.id);
+    expect(creditRepo.store.values.first.payments, isNotEmpty);
   });
 
   test('veresiye yoksa CreditSale oluşturulmaz', () async {

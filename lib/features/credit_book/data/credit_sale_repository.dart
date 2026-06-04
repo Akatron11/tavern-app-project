@@ -9,4 +9,7 @@ abstract class CreditSaleRepository {
 
   /// [range.start] dahil, [range.end] hariç tarihe sahip veresiyeler.
   Future<List<CreditSale>> getByDateRange(DateRange range);
+
+  /// Kaydı tamamen siler (yanlış girilen veresiye düzeltmesi / "ödendi" silme).
+  Future<void> delete(String id);
 }

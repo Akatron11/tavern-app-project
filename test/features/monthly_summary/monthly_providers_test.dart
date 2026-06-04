@@ -106,8 +106,8 @@ void main() {
       expect(report.creditCard, 100000);
       expect(report.cashExpenses, 30000);
       expect(report.ownerExpenses, 20000);
-      // profit: 500000 - 100000 - (30000 + 20000) - 0 - 0 = 350000
-      expect(report.profit, 350000);
+      // profit (BUG-09, kredi kartı düşülmez): 500000 - (30000 + 20000) - 0 - 0 = 450000
+      expect(report.profit, 450000);
     });
   });
 }

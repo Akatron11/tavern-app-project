@@ -117,10 +117,16 @@ class DailyRecordController extends AsyncNotifier<void> {
       ));
     }
 
-    // creditSales == 0: bağlı kayıt varsa paid/0'a mutabık kıl (silme yok)
+    // creditSales == 0: bağlı kayıt varsa
     if (existingLinkedId != null) {
       final sale = await _creditRepo.getById(existingLinkedId);
       if (sale != null) {
+        if (sale.payments.isEmpty) {
+          // Yanlış girilmiş/iptal edilen veresiye → sil ("ödendi" yapma, BUG-01).
+          await _creditRepo.delete(existingLinkedId);
+          return null;
+        }
+        // Ödeme geçmişi varsa koru: paid/0'a mutabık kıl (silme yok).
         await _creditRepo.update(
           CreditReconciler.reconcile(sale, newTotal: 0),
         );

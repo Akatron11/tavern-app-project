@@ -48,4 +48,7 @@ class FirestoreCreditSaleRepository implements CreditSaleRepository {
         .map((d) => CreditSale.fromMap(d.id, d.data()))
         .toList();
   }
+
+  @override
+  Future<void> delete(String id) => _col.doc(id).delete();
 }
