@@ -24,7 +24,7 @@
 | Plan kurgusu | Temel önce + dikey dilimler, fazlar arası onay noktaları. |
 | **Günlük kasa formülü** | `Ciro − Kredi Kartı + Bahşiş − Kasa Masrafı − Veresiye`. **Patron masrafı günlük kasayı etkilemez.** Toplam masraf gösteriminde kasa ve patron masrafı **ayrı** gösterilir. |
 | **Bahşiş** | O gün dağıtıldıysa günlük kayıtta `0`; aksi halde kasada birikir. Haftalık **"Dağıtıldı, kapat"** ile kasadan düşülür ve sıfırlanır (§3.6). |
-| **Aylık Kâr/Zarar** | `Ciro − Kredi Kartı − (Kasa+Patron Masrafı) − Personel Ücretleri − Tahsil Edilemeyen Veresiye` (**bahşiş hariç**) (§3.5). |
+| **Aylık Kâr/Zarar** | `Ciro − (Kasa+Patron Masrafı) − Personel Ücretleri − Tahsil Edilemeyen Veresiye` (**bahşiş ve kredi kartı hariç** — kredi kartı zaten ciroya dahildir; QA Tur 1 BUG-09, 2026-06-04) (§3.5). |
 
 ---
 
@@ -151,15 +151,14 @@ CreditSale reconcile(CreditSale sale, {required int newTotal})
 
 ### 3.5 `MonthlyReportCalculator` (Faz 9)
 ```
-// Aylık Kâr/Zarar — BAHŞİŞ HARİÇ.
+// Aylık Kâr/Zarar — BAHŞİŞ ve KREDİ KARTI HARİÇ (kredi kartı zaten ciroda; QA Tur 1 BUG-09).
 int monthlyProfit({
   required int revenue,             // Σ ciro
-  required int creditCard,          // Σ kredi kartı
   required int cashExpenses,        // Σ kasa masrafı
   required int ownerExpenses,       // Σ patron masrafı
   required int staffWages,          // Σ PayrollCalculator (tüm personel, ay)
   required int uncollectibleCredit, // tahsil edilemeyen veresiye
-}) => revenue - creditCard - (cashExpenses + ownerExpenses) - staffWages - uncollectibleCredit;
+}) => revenue - (cashExpenses + ownerExpenses) - staffWages - uncollectibleCredit;
 ```
 > **Açık nokta (Faz 9'da netleştir):** "Tahsil edilemeyen veresiye" tanımı — varsayılan yorum: ilgili ay içindeki veresiyelerin `remainingAmount` (tahsil edilmemiş kalan) toplamı. Kemal "yalnızca batık/yazılan" derse ayrı bir `writtenOff` durumu eklenir.
 

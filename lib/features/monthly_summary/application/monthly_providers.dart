@@ -68,7 +68,6 @@ final monthlyReportProvider = FutureProvider<MonthlyReport>((ref) async {
 
   final profit = MonthlyReportCalculator.monthlyProfit(
     revenue: revenue,
-    creditCard: creditCard,
     cashExpenses: cashExpenses,
     ownerExpenses: ownerExpenses,
     staffWages: staffWages,
