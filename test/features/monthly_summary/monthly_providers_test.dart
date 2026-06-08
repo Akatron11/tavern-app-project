@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gilanli_meyhane/core/utils/date_utils.dart';
 import 'package:gilanli_meyhane/features/credit_book/application/credit_book_providers.dart';
 import 'package:gilanli_meyhane/features/credit_book/data/mock_credit_sale_repository.dart';
+import 'package:gilanli_meyhane/features/credit_book/domain/credit_sale.dart';
 import 'package:gilanli_meyhane/features/daily_record/application/daily_record_providers.dart';
 import 'package:gilanli_meyhane/features/daily_record/data/mock_daily_record_repository.dart';
 import 'package:gilanli_meyhane/features/daily_record/domain/daily_record.dart';
@@ -108,6 +109,69 @@ void main() {
       expect(report.ownerExpenses, 20000);
       // profit (BUG-09, kredi kartı düşülmez): 500000 - (30000 + 20000) - 0 - 0 = 450000
       expect(report.profit, 450000);
+    });
+  });
+
+  group('BUG-10/11 — tahsil bekleyen + reaktivite', () {
+    test('outstandingCredit yalnızca pending+partial sayar (paid hariç)',
+        () async {
+      final creditRepo = MockCreditSaleRepository();
+      final now = DateTime.now();
+      DateTime d(int day) => DateTime(now.year, now.month, day);
+      await creditRepo.add(CreditSale(
+          id: '',
+          customerName: 'P',
+          totalAmount: 100000,
+          remainingAmount: 100000,
+          date: d(2),
+          status: CreditStatus.pending));
+      await creditRepo.add(CreditSale(
+          id: '',
+          customerName: 'Q',
+          totalAmount: 60000,
+          remainingAmount: 20000,
+          date: d(3),
+          status: CreditStatus.partial));
+      await creditRepo.add(CreditSale(
+          id: '',
+          customerName: 'R',
+          totalAmount: 50000,
+          remainingAmount: 0,
+          date: d(4),
+          status: CreditStatus.paid));
+
+      final c = _makeContainer(creditRepo: creditRepo);
+      addTearDown(c.dispose);
+
+      final report = await c.read(monthlyReportProvider.future);
+      expect(report.outstandingCredit, 160000); // pending+partial; paid hariç
+      expect(report.uncollectibleCredit, 120000); // Σ remaining
+    });
+
+    test('BUG-10: tam ödeme sonrası tahsil bekleyen reaktif 0 olur', () async {
+      final creditRepo = MockCreditSaleRepository();
+      final now = DateTime.now();
+      final id = await creditRepo.add(CreditSale(
+          id: '',
+          customerName: 'A',
+          totalAmount: 100000,
+          remainingAmount: 100000,
+          date: DateTime(now.year, now.month, 5),
+          status: CreditStatus.pending));
+
+      final c = _makeContainer(creditRepo: creditRepo);
+      addTearDown(c.dispose);
+      final sub = c.listen(monthlyReportProvider, (_, _) {});
+      addTearDown(sub.close);
+
+      var report = await c.read(monthlyReportProvider.future);
+      expect(report.outstandingCredit, 100000);
+
+      await c.read(creditBookControllerProvider.notifier).markPaid(id);
+      await pumpEventQueue();
+
+      report = await c.read(monthlyReportProvider.future);
+      expect(report.outstandingCredit, 0);
     });
   });
 }

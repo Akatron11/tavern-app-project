@@ -40,7 +40,13 @@ final monthlyRecordsProvider = FutureProvider<List<DailyRecord>>((ref) async {
 final monthlyCreditSalesProvider =
     FutureProvider<List<CreditSale>>((ref) async {
   final range = ref.watch(currentMonthRangeProvider);
-  return ref.watch(creditSaleRepositoryProvider).getByDateRange(range);
+  // Reaktif: veresiye akışını dinler → defterdeki değişiklikler (ödeme, durum,
+  // silme) aylık özete/tabloya anında yansır (BUG-10).
+  final all = await ref.watch(creditSaleListProvider.future);
+  return all
+      .where((c) =>
+          !c.date.isBefore(range.start) && c.date.isBefore(range.end))
+      .toList();
 });
 
 /// Mevcut ay için tüm personelin toplam tahakkuk ücreti.
@@ -61,8 +67,11 @@ final monthlyReportProvider = FutureProvider<MonthlyReport>((ref) async {
   final creditCard = records.fold<int>(0, (s, r) => s + r.creditCard);
   final cashExpenses = records.fold<int>(0, (s, r) => s + r.cashExpenses);
   final ownerExpenses = records.fold<int>(0, (s, r) => s + r.ownerExpenses);
-  final creditSalesTotal =
-      credits.fold<int>(0, (s, c) => s + c.totalAmount);
+  // Tahsil bekleyen: henüz tamamen ödenmemiş (pending+partial) veresiyelerin
+  // toplam tutarı. Tüm veresiyeler ödenince 0 olur (BUG-11).
+  final outstanding = credits
+      .where((c) => c.status != CreditStatus.paid)
+      .fold<int>(0, (s, c) => s + c.totalAmount);
   final uncollectible =
       credits.fold<int>(0, (s, c) => s + c.remainingAmount);
 
@@ -80,7 +89,7 @@ final monthlyReportProvider = FutureProvider<MonthlyReport>((ref) async {
     cashExpenses: cashExpenses,
     ownerExpenses: ownerExpenses,
     staffWages: staffWages,
-    creditSalesTotal: creditSalesTotal,
+    outstandingCredit: outstanding,
     uncollectibleCredit: uncollectible,
     profit: profit,
   );

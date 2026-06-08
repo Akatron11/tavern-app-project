@@ -450,7 +450,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get monthlyStaffWages => 'Staff Wages';
 
   @override
-  String get monthlyCreditSalesTotal => 'Credit Sales (Total)';
+  String get monthlyOutstandingCredit => 'Outstanding Credit';
 
   @override
   String get monthlyUncollectible => 'Uncollectible';

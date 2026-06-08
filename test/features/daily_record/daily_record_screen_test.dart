@@ -5,6 +5,7 @@ import 'package:gilanli_meyhane/core/l10n/generated/app_localizations.dart';
 import 'package:gilanli_meyhane/features/credit_book/application/credit_book_providers.dart';
 import 'package:gilanli_meyhane/features/credit_book/data/credit_sale_repository.dart';
 import 'package:gilanli_meyhane/features/credit_book/data/mock_credit_sale_repository.dart';
+import 'package:gilanli_meyhane/features/dashboard/application/dashboard_providers.dart';
 import 'package:gilanli_meyhane/features/daily_record/application/daily_record_providers.dart';
 import 'package:gilanli_meyhane/features/daily_record/data/daily_record_repository.dart';
 import 'package:gilanli_meyhane/features/daily_record/data/mock_daily_record_repository.dart';
@@ -97,5 +98,59 @@ void main() {
     expect(find.text(l10n.requiredField), findsWidgets);
     expect(find.text(l10n.saveConfirmTitle), findsNothing);
     expect(dailyRepo.store, isEmpty);
+  });
+
+  testWidgets('BUG-03: kayıt sonrası dashboard bugün kaydı tazelenir',
+      (tester) async {
+    tester.view.physicalSize = const Size(1200, 4000);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    final dailyRepo = MockDailyRecordRepository();
+    final container = ProviderContainer(overrides: [
+      dailyRecordRepositoryProvider.overrideWithValue(dailyRepo),
+      creditSaleRepositoryProvider.overrideWithValue(MockCreditSaleRepository()),
+      staffRepositoryProvider.overrideWithValue(MockStaffRepository()),
+    ]);
+    addTearDown(container.dispose);
+
+    // Başlangıçta bugün kaydı yok.
+    expect(await container.read(todayRecordProvider.future), isNull);
+
+    await tester.pumpWidget(UncontrolledProviderScope(
+      container: container,
+      child: const MaterialApp(
+        locale: Locale('tr'),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: DailyRecordScreen(),
+      ),
+    ));
+    await tester.pumpAndSettle();
+
+    final l10n = await AppLocalizations.delegate.load(const Locale('tr'));
+    await tester.enterText(
+        find.widgetWithText(TextFormField, l10n.revenue), '1000');
+    await tester.enterText(
+        find.widgetWithText(TextFormField, l10n.creditCardTotal), '0');
+    await tester.enterText(
+        find.widgetWithText(TextFormField, l10n.ownerExpense), '0');
+    await tester.enterText(
+        find.widgetWithText(TextFormField, l10n.cashExpense), '0');
+    await tester.enterText(
+        find.widgetWithText(TextFormField, l10n.previousDayCash), '0');
+    await tester.pump();
+
+    await tester.tap(find.widgetWithText(ElevatedButton, l10n.save));
+    await tester.pumpAndSettle();
+    // Onay dialog'unda "Onayla".
+    await tester.tap(find.widgetWithText(TextButton, l10n.confirm));
+    await tester.pumpAndSettle();
+
+    // Invalidate sonrası bugün kaydı görünür (BUG-03).
+    final rec = await container.read(todayRecordProvider.future);
+    expect(rec, isNotNull);
+    expect(rec!.revenue, 100000);
   });
 }

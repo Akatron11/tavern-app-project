@@ -950,11 +950,11 @@ abstract class AppLocalizations {
   /// **'Personel Ücretleri'**
   String get monthlyStaffWages;
 
-  /// Aylık özet — veresiye toplam etiketi
+  /// Aylık özet — tahsil bekleyen (ödenmemiş) veresiye toplamı
   ///
   /// In tr, this message translates to:
-  /// **'Veresiye (Toplam)'**
-  String get monthlyCreditSalesTotal;
+  /// **'Tahsil Bekleyen Veresiye'**
+  String get monthlyOutstandingCredit;
 
   /// Aylık özet — tahsil edilemeyen veresiye etiketi
   ///

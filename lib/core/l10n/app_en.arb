@@ -158,7 +158,7 @@
   "monthlyCashExpenses": "Cash Expenses",
   "monthlyOwnerExpenses": "Owner Expenses",
   "monthlyStaffWages": "Staff Wages",
-  "monthlyCreditSalesTotal": "Credit Sales (Total)",
+  "monthlyOutstandingCredit": "Outstanding Credit",
   "monthlyUncollectible": "Uncollectible",
   "monthlyProfitLabel": "Profit / Loss",
   "noRecordsThisMonth": "No records this month.",

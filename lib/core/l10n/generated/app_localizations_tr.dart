@@ -451,7 +451,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get monthlyStaffWages => 'Personel Ücretleri';
 
   @override
-  String get monthlyCreditSalesTotal => 'Veresiye (Toplam)';
+  String get monthlyOutstandingCredit => 'Tahsil Bekleyen Veresiye';
 
   @override
   String get monthlyUncollectible => 'Tahsil Edilemeyen';

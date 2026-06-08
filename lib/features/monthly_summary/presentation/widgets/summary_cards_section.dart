@@ -46,8 +46,8 @@ class SummaryCardsSection extends StatelessWidget {
           color: cs.error,
         ),
         _StatCard(
-          label: l10n.monthlyCreditSalesTotal,
-          value: report.creditSalesTotal.toCurrency(locale),
+          label: l10n.monthlyOutstandingCredit,
+          value: report.outstandingCredit.toCurrency(locale),
         ),
         _StatCard(
           label: l10n.monthlyUncollectible,

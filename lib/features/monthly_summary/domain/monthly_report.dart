@@ -8,7 +8,7 @@ class MonthlyReport extends Equatable {
     required this.cashExpenses,
     required this.ownerExpenses,
     required this.staffWages,
-    required this.creditSalesTotal,
+    required this.outstandingCredit,
     required this.uncollectibleCredit,
     required this.profit,
   });
@@ -18,7 +18,7 @@ class MonthlyReport extends Equatable {
   final int cashExpenses;
   final int ownerExpenses;
   final int staffWages;
-  final int creditSalesTotal;
+  final int outstandingCredit;
   final int uncollectibleCredit;
   final int profit;
 
@@ -29,7 +29,7 @@ class MonthlyReport extends Equatable {
         cashExpenses,
         ownerExpenses,
         staffWages,
-        creditSalesTotal,
+        outstandingCredit,
         uncollectibleCredit,
         profit,
       ];

@@ -7,6 +7,8 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/utils/date_utils.dart';
 import '../../../shared/widgets/confirm_dialog.dart';
 import '../../../shared/widgets/money_input_field.dart';
+import '../../dashboard/application/dashboard_providers.dart';
+import '../../monthly_summary/application/monthly_providers.dart';
 import '../application/daily_record_providers.dart';
 import 'widgets/live_totals_card.dart';
 import 'widgets/staff_multiselect.dart';
@@ -114,6 +116,9 @@ class _DailyRecordScreenState extends ConsumerState<DailyRecordScreen> {
     if (!mounted) return;
     final state = ref.read(dailyRecordControllerProvider);
     if (state is! AsyncError) {
+      // BUG-03: bağımlı okuma sağlayıcılarını tazele (dashboard + aylık özet).
+      ref.invalidate(todayRecordProvider);
+      ref.invalidate(monthlyRecordsProvider);
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(l10n.dailyRecordSaved)));
     }
