@@ -1,6 +1,8 @@
 # Faz 12 — QA Tur 1 Düzeltmeleri Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: superpowers:executing-plans + superpowers:systematic-debugging (her bug için: kök neden → reprodüksiyon testi → düzeltme → doğrulama). Saf mantık değişikliklerinde superpowers:test-driven-development. Checkbox (`- [ ]`) ile takip.
+>
+> **DURUM (2026-06-04):** Tier 1, 2, 3.1 ✅ TAMAM (BUG-09/01/04/07/15/02/03/10/11 — 9 madde, `phase-12-qa-fixes` dalında commit'li, 139 test yeşil). **Kalan:** Tier 3.2 → Tier 5. Güncel durum + sıradaki adımlar: **PROGRESS.md → "KALDIĞIMIZ YER" bölümü.**
 
 **Goal:** QA Tur 1 raporundaki ([docs/bugreport-qa-round1.md](../../bugreport-qa-round1.md)) 16 bug + 2 yeni özellik + 2 iyileştirmeyi öncelik sırasıyla çözmek; her biri test + analyze yeşil bırakarak.
 

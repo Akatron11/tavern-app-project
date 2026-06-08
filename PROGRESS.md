@@ -1,11 +1,44 @@
 # Gilanlı Köy Meyhanesi — PROGRESS
 
 **Son güncelleme:** 2026-06-04
-**Aktif faz:** — MVP v1.0 tamamlandı (Definition of Done karşılandı)
-**Branch:** main
+**Aktif faz:** Faz 12 — QA Tur 1 düzeltmeleri (🔄 DEVAM — 9/20 madde tamam)
+**Branch:** `phase-12-qa-fixes` (main'e henüz MERGE EDİLMEDİ)
 **Plan:** [docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md](docs/superpowers/plans/2026-06-02-gilanli-meyhane-master-plan.md)
 
 > Bu dosya her adım sonrası güncellenir.
+
+---
+
+## ▶️ KALDIĞIMIZ YER — Faz 12 (yeni sohbette BURADAN devam et)
+
+**İlk iş:** `git checkout phase-12-qa-fixes` (çalışma bu dalda; main'e merge edilmedi).
+**Plan:** [docs/superpowers/plans/2026-06-04-faz-12-qa-tur1-duzeltmeleri.md](docs/superpowers/plans/2026-06-04-faz-12-qa-tur1-duzeltmeleri.md)
+**Bug raporu:** [docs/bugreport-qa-round1.md](docs/bugreport-qa-round1.md)
+**Durum:** 9/20 madde tamam · **139 test yeşil** · analyze temiz · her madde ayrı commit.
+
+### ✅ Tamamlanan (commit'li)
+BUG-09 (kâr formülü: kredi kartı çıkarıldı) · BUG-01 (veresiye 0'a inince ödemesizse silinir) ·
+BUG-04/07 (ödeme dialog çökmesi + taşma) · BUG-15 (para canlı binlik ayraç) ·
+BUG-02 (günlük kayıt zorunlu alan) · BUG-03 (kayıt sonrası dashboard tazeleme) ·
+BUG-10 (aylık veresiye reaktivitesi) · BUG-11 ("Tahsil Bekleyen Veresiye").
+
+### ⏳ Kalan (plandaki Tier sırasıyla)
+- **Tier 3.2 — BUG-08:** Gider düzenlemede `remaining = totalAmount − paidAmount` anında yeniden hesaplansın (`payments_providers.dart` + `pending_expense.dart`).
+- **Tier 3.3 — BUG-05/06:** Günlük kayıttan gelen veresiyede tarih dolu+listede görünür (`credit_sale_tile.dart`); manuel veresiye formuna DatePicker (`credit_form.dart`).
+- **Tier 3.4 — BUG-16:** Günlük kayıt kaydedilince bugünkü bildirimi iptal + ertesi güne planla (pragmatik; `daily_record_providers` + `notification_service`).
+- **Tier 3.5 — YENİ-01/02:** `status==paid` veresiye **ve** gider onay dialog'uyla silinebilsin. NOT: `CreditSaleRepository.delete` ZATEN eklendi (BUG-01'de); `PaymentRepository`'ye `delete` + UI ("Sil" + onay) eklenecek.
+- **Tier 4 — kozmetik/UX:** BUG-12 (haftalık liste tam ay adı `MMM`→`MMMM`, `daily_summary_list.dart`) · BUG-13 (personel günleri tablo taşması, `staff_days_table.dart`) · BUG-14 ("bu günün" yazım — önce `rg "[Bb]u günün" lib` ile yeri bul; `todaySummary` zaten doğru görünüyor) · İYİ-01 (dashboard kartı: çalışan sayısı yerine günün cirosu, `today_summary_card.dart`) · İYİ-02 (login şifre göster/gizle toggle).
+- **Tier 5 — Kapanış:** `flutter test`+`analyze`+`build apk --debug`; `verification-before-completion`; PROGRESS + bug rapor durumları; `finishing-a-development-branch` ile `phase-12-qa-fixes` → `main` merge.
+
+### Onaylı kararlar (yeni sohbette TEKRAR SORMA)
+- YENİ-01/02 → **EVET, ikisi de** silinebilir (onay dialog'lu, yalnızca `paid`).
+- BUG-16 → **şimdi uygula** (pragmatik: kayıt sonrası bugünkü bildirimi iptal et).
+- BUG-09 (kredi kartı çıkar) ve BUG-11 ("Tahsil Bekleyen") → onaylandı ve YAPILDI.
+
+### Süreç (CLAUDE.md)
+Önce 3 dosya (CLAUDE.md + master plan + bu dosya) → `superpowers:executing-plans` ile Faz 12 planından devam →
+her bug'da `superpowers:systematic-debugging` (reprodüksiyon/TDD → kök neden → düzeltme → doğrulama) →
+her adım bitmeden `superpowers:verification-before-completion`. Her düzeltmeyi ayrı commit'le.
 
 ---
 
@@ -23,6 +56,7 @@
 - [x] **Faz 9 — Aylık Özet** ✅ tamam (116 test, analyze temiz)
 - [x] **Faz 10 — Ayarlar / Bildirim / i18n** ✅ tamam (129 test, analyze temiz, debug APK derlendi)
 - [x] **Faz 11 — Sağlamlaştırma & Cila** ✅ tamam (129 test, analyze temiz, debug APK derlendi) — **MVP DoD ✅**
+- [~] **Faz 12 — QA Tur 1 düzeltmeleri** 🔄 DEVAM (9/20 madde tamam, 139 test yeşil, analyze temiz) — bkz. "KALDIĞIMIZ YER" bölümü
 
 ---
 
