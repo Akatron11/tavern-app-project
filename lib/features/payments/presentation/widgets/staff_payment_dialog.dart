@@ -24,7 +24,7 @@ Future<int?> showStaffPaymentDialog(
           label: '${l10n.paymentAmount} — $staffName',
           validator: (v) {
             if (v == null || v.trim().isEmpty) return l10n.paymentAmountRequired;
-            final n = int.tryParse(v.trim());
+            final n = MoneyInputField.liraValue(v);
             if (n == null || n <= 0) return l10n.paymentAmountInvalid;
             return null;
           },

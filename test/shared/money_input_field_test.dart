@@ -47,4 +47,15 @@ void main() {
     expect(find.text('6,000'), findsOneWidget);
     expect(MoneyInputField.kurusOf(ctrl), 600000);
   });
+
+  group('liraValue (validator yardımcısı — BUG-15 regresyonu)', () {
+    test('ayraçlı metni doğru parse eder, ham int.tryParse bozulmaz', () {
+      expect(MoneyInputField.liraValue('6.000'), 6000);
+      expect(MoneyInputField.liraValue('1.234.567'), 1234567);
+      expect(MoneyInputField.liraValue('6,000'), 6000); // EN ayraç da yok sayılır
+      expect(MoneyInputField.liraValue('0'), 0);
+      expect(MoneyInputField.liraValue(''), isNull);
+      expect(MoneyInputField.liraValue(null), isNull);
+    });
+  });
 }

@@ -30,6 +30,14 @@ class MoneyInputField extends StatefulWidget {
     return liraToKurus(int.tryParse(digits) ?? 0);
   }
 
+  /// Validator yardımcısı: ayraçlı metni lira tamsayısına çevirir
+  /// (örn. "6.000" → 6000). Boş/geçersizse `null`.
+  /// Validator'lar ham `int.tryParse(v)` yapmamalı (ayraç parse'ı bozar).
+  static int? liraValue(String? text) {
+    final digits = (text ?? '').replaceAll(RegExp(r'[^0-9]'), '');
+    return digits.isEmpty ? null : int.tryParse(digits);
+  }
+
   @override
   State<MoneyInputField> createState() => _MoneyInputFieldState();
 }
