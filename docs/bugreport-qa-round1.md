@@ -1,7 +1,7 @@
 # QA Tur 1 — Bug & İyileştirme Raporu
 > Tarih: 2026-06-04  
 > Test eden: Kemal  
-> Durum: Claude Code'a iletilecek
+> Durum: ✅ **TÜMÜ ÇÖZÜLDÜ — Faz 12 (2026-06-04)**. 16 bug + 2 yeni özellik + 2 iyileştirme uygulandı (147 test yeşil). BUG-14 ("bu günün" yazımı) kodda mevcut değildi — `todaySummary` zaten "Bugünün Özeti"; doğrulandı, değişiklik yok. Ayrıntı: [PROGRESS.md](../PROGRESS.md) + commit geçmişi.
 
 ---
 
