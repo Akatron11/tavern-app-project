@@ -1039,6 +1039,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Bu alan boş bırakılamaz'**
   String get requiredField;
+
+  /// Genel tarih etiketi (veresiye formu vb.)
+  ///
+  /// In tr, this message translates to:
+  /// **'Tarih'**
+  String get date;
 }
 
 class _AppLocalizationsDelegate

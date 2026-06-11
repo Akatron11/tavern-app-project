@@ -173,5 +173,6 @@
   "english": "English",
   "openSettings": "Settings",
   "genericError": "An error occurred",
-  "requiredField": "This field cannot be empty"
+  "requiredField": "This field cannot be empty",
+  "date": "Date"
 }

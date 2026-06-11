@@ -94,4 +94,19 @@ void main() {
     expect(updated.remainingAmount, 150000);
     expect(updated.status, CreditStatus.pending);
   });
+
+  test('BUG-06: updateSale tarih verilince günceller, verilmezse korur',
+      () async {
+    await ctrl().addSale(
+        customerName: 'Veli', totalAmount: 100000, date: DateTime(2026, 1, 1));
+    final id = repo.store.keys.first;
+
+    await ctrl().updateSale(repo.store[id]!,
+        customerName: 'Veli', totalAmount: 100000, date: DateTime(2026, 3, 15));
+    expect(repo.store[id]!.date, DateTime(2026, 3, 15));
+
+    await ctrl().updateSale(repo.store[id]!,
+        customerName: 'Veli', totalAmount: 120000);
+    expect(repo.store[id]!.date, DateTime(2026, 3, 15)); // korunur
+  });
 }

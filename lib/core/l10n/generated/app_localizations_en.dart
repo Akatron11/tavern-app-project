@@ -493,4 +493,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get requiredField => 'This field cannot be empty';
+
+  @override
+  String get date => 'Date';
 }

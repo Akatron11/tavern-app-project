@@ -46,11 +46,12 @@ class CreditBookController extends AsyncNotifier<void> {
     CreditSale sale, {
     required String customerName,
     required int totalAmount,
+    DateTime? date,
   }) async {
     state = const AsyncLoading();
     state = await AsyncValue.guard(() {
       final updated = CreditReconciler.reconcile(
-        sale.copyWith(customerName: customerName),
+        sale.copyWith(customerName: customerName, date: date ?? sale.date),
         newTotal: totalAmount,
       );
       return _repo.update(updated);

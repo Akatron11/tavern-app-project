@@ -494,4 +494,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get requiredField => 'Bu alan boş bırakılamaz';
+
+  @override
+  String get date => 'Tarih';
 }

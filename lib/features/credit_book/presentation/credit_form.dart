@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../shared/widgets/confirm_dialog.dart';
@@ -21,6 +22,7 @@ class _CreditFormState extends ConsumerState<CreditForm> {
   final _formKey = GlobalKey<FormState>();
   late final TextEditingController _nameCtrl;
   late final TextEditingController _amountCtrl;
+  late DateTime _date;
 
   bool get _isEdit => widget.sale != null;
 
@@ -32,6 +34,7 @@ class _CreditFormState extends ConsumerState<CreditForm> {
         ? (widget.sale!.totalAmount ~/ 100).toString()
         : '';
     _amountCtrl = TextEditingController(text: amountLira);
+    _date = widget.sale?.date ?? DateTime.now();
   }
 
   @override
@@ -52,19 +55,20 @@ class _CreditFormState extends ConsumerState<CreditForm> {
     if (!confirmed) return;
 
     final customerName = _nameCtrl.text.trim();
-    final totalKurus = (int.tryParse(_amountCtrl.text.trim()) ?? 0) * 100;
+    final totalKurus = MoneyInputField.kurusOf(_amountCtrl);
 
     if (_isEdit) {
       await ref.read(creditBookControllerProvider.notifier).updateSale(
             widget.sale!,
             customerName: customerName,
             totalAmount: totalKurus,
+            date: _date,
           );
     } else {
       await ref.read(creditBookControllerProvider.notifier).addSale(
             customerName: customerName,
             totalAmount: totalKurus,
-            date: DateTime.now(),
+            date: _date,
           );
     }
 
@@ -75,6 +79,16 @@ class _CreditFormState extends ConsumerState<CreditForm> {
       ));
       Navigator.of(context).pop();
     }
+  }
+
+  Future<void> _pickDate() async {
+    final picked = await showDatePicker(
+      context: context,
+      initialDate: _date,
+      firstDate: DateTime(2020),
+      lastDate: DateTime(2100),
+    );
+    if (picked != null) setState(() => _date = picked);
   }
 
   @override
@@ -114,6 +128,15 @@ class _CreditFormState extends ConsumerState<CreditForm> {
                     if (n == null || n <= 0) return l10n.creditTotalAmountInvalid;
                     return null;
                   },
+                ),
+                const SizedBox(height: 8),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.calendar_today),
+                  title: Text(l10n.date),
+                  subtitle: Text(DateFormat('dd.MM.yyyy').format(_date)),
+                  trailing: const Icon(Icons.edit),
+                  onTap: _pickDate,
                 ),
                 const SizedBox(height: 24),
                 SizedBox(

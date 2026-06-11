@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/money/currency_formatter.dart';
@@ -39,7 +40,8 @@ class CreditSaleTile extends StatelessWidget {
       title: Text(sale.customerName,
           style: const TextStyle(fontWeight: FontWeight.w600)),
       subtitle: Text(
-        '${l10n.creditRemainingAmount}: ${formatCurrency(sale.remainingAmount, locale: locale)}  /  ${formatCurrency(sale.totalAmount, locale: locale)}',
+        '${DateFormat('dd.MM.yyyy').format(sale.date)} · '
+        '${l10n.creditRemainingAmount}: ${formatCurrency(sale.remainingAmount, locale: locale)} / ${formatCurrency(sale.totalAmount, locale: locale)}',
         style: const TextStyle(fontSize: 14),
       ),
       trailing: Chip(
