@@ -15,6 +15,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  bool _obscure = true;
 
   @override
   void dispose() {
@@ -70,8 +71,18 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: _passwordController,
-                  decoration: InputDecoration(labelText: l10n.password),
-                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: l10n.password,
+                    suffixIcon: IconButton(
+                      icon: Icon(_obscure
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined),
+                      tooltip:
+                          _obscure ? l10n.showPassword : l10n.hidePassword,
+                      onPressed: () => setState(() => _obscure = !_obscure),
+                    ),
+                  ),
+                  obscureText: _obscure,
                   textInputAction: TextInputAction.done,
                   onFieldSubmitted: (_) => _submit(),
                   validator: (v) =>

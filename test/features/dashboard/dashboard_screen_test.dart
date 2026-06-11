@@ -69,7 +69,7 @@ void main() {
       expect(find.text('Bugün kayıt girilmemiş.'), findsOneWidget);
     });
 
-    testWidgets('kayıt varsa dailyCash etiketi ve çalışan sayısı gösterilir',
+    testWidgets('kayıt varsa dailyCash ve günün cirosu gösterilir (İYİ-01)',
         (tester) async {
       await tester.pumpWidget(
         ProviderScope(
@@ -86,8 +86,8 @@ void main() {
       );
       await tester.pump();
       expect(find.text('Günlük Kasa'), findsOneWidget);
-      expect(find.text('Çalışan Personel'), findsOneWidget);
-      expect(find.text('3'), findsOneWidget);
+      expect(find.text('Toplam Ciro'), findsOneWidget);
+      expect(find.text('10.000 ₺'), findsOneWidget); // günün cirosu
     });
   });
 }

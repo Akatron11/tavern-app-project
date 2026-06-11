@@ -19,46 +19,20 @@ class StaffDaysTable extends StatelessWidget {
       return const SizedBox.shrink();
     }
 
-    return Table(
-      columnWidths: const {
-        0: FlexColumnWidth(3),
-        1: FlexColumnWidth(2),
-        2: FlexColumnWidth(1),
-      },
-      children: [
-        TableRow(
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.surfaceContainerHighest,
+    // BUG-13: Table yerine kompakt ListTile + gün chip'i (taşma/düzensizlik yok).
+    return Column(
+      children: staffDays.map((entry) {
+        return ListTile(
+          dense: true,
+          contentPadding: EdgeInsets.zero,
+          title: Text(entry.staff.name),
+          subtitle: Text(_roleLabel(context, entry.staff.role)),
+          trailing: Chip(
+            label: Text('${entry.days} ${l10n.dayUnit}'),
+            visualDensity: VisualDensity.compact,
           ),
-          children: [
-            _cell(l10n.staffName, bold: true),
-            _cell(l10n.staffRole, bold: true),
-            _cell(l10n.staffDaysTitle,
-                bold: true, align: TextAlign.center),
-          ],
-        ),
-        ...staffDays.map(
-          (entry) => TableRow(
-            children: [
-              _cell(entry.staff.name),
-              _cell(_roleLabel(context, entry.staff.role)),
-              _cell('${entry.days}', align: TextAlign.center),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _cell(String text,
-      {bool bold = false, TextAlign align = TextAlign.start}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-      child: Text(
-        text,
-        textAlign: align,
-        style: bold ? const TextStyle(fontWeight: FontWeight.bold) : null,
-      ),
+        );
+      }).toList(),
     );
   }
 

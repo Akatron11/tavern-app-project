@@ -1069,6 +1069,24 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Bu gider kaydını silmek istediğinizden emin misiniz?'**
   String get deleteExpenseConfirmTitle;
+
+  /// Gün birimi (personel günleri chip'i)
+  ///
+  /// In tr, this message translates to:
+  /// **'gün'**
+  String get dayUnit;
+
+  /// No description provided for @showPassword.
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreyi göster'**
+  String get showPassword;
+
+  /// No description provided for @hidePassword.
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreyi gizle'**
+  String get hidePassword;
 }
 
 class _AppLocalizationsDelegate

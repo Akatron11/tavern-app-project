@@ -511,4 +511,13 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get deleteExpenseConfirmTitle =>
       'Bu gider kaydını silmek istediğinizden emin misiniz?';
+
+  @override
+  String get dayUnit => 'gün';
+
+  @override
+  String get showPassword => 'Şifreyi göster';
+
+  @override
+  String get hidePassword => 'Şifreyi gizle';
 }

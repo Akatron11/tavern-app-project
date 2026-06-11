@@ -235,5 +235,9 @@
   "deleteCreditConfirmTitle": "Bu veresiye kaydını silmek istediğinizden emin misiniz?",
   "deleteExpense": "Gideri Sil",
   "@deleteExpense": { "description": "Ödendi gider silme aksiyonu (YENİ-02)" },
-  "deleteExpenseConfirmTitle": "Bu gider kaydını silmek istediğinizden emin misiniz?"
+  "deleteExpenseConfirmTitle": "Bu gider kaydını silmek istediğinizden emin misiniz?",
+  "dayUnit": "gün",
+  "@dayUnit": { "description": "Gün birimi (personel günleri chip'i)" },
+  "showPassword": "Şifreyi göster",
+  "hidePassword": "Şifreyi gizle"
 }

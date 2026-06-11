@@ -178,5 +178,8 @@
   "deleteCreditSale": "Delete Credit Sale",
   "deleteCreditConfirmTitle": "Are you sure you want to delete this credit record?",
   "deleteExpense": "Delete Expense",
-  "deleteExpenseConfirmTitle": "Are you sure you want to delete this expense record?"
+  "deleteExpenseConfirmTitle": "Are you sure you want to delete this expense record?",
+  "dayUnit": "days",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password"
 }

@@ -33,7 +33,7 @@ class DailySummaryList extends StatelessWidget {
       children: days.map((day) {
         final key = dayKey(day);
         final record = recordMap[key];
-        final dateLabel = intl.DateFormat('d MMM, EEEE', locale).format(day);
+        final dateLabel = intl.DateFormat('d MMMM, EEEE', locale).format(day);
 
         if (record == null) {
           return ListTile(

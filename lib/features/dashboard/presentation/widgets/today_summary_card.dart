@@ -46,8 +46,8 @@ class TodaySummaryCard extends ConsumerWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(l10n.workingStaffCountLabel),
-                    Text('${record.workingStaffIds.length}'),
+                    Text(l10n.revenue),
+                    Text(record.revenue.toCurrency(locale)),
                   ],
                 ),
               ],
