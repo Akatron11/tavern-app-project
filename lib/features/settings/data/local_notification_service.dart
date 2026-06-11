@@ -36,12 +36,17 @@ class LocalNotificationService implements NotificationService {
     required int minute,
     required String title,
     required String body,
+    bool skipToday = false,
   }) async {
-    final when = nextInstanceOfTime(
-      hour: hour,
-      minute: minute,
-      now: DateTime.now(),
-    );
+    final now = DateTime.now();
+    var when = nextInstanceOfTime(hour: hour, minute: minute, now: now);
+    // BUG-16: bugün kayıt girildiyse ilk tetiği yarına ötele.
+    if (skipToday &&
+        when.year == now.year &&
+        when.month == now.month &&
+        when.day == now.day) {
+      when = when.add(const Duration(days: 1));
+    }
     final scheduled = tz.TZDateTime.from(when, tz.local);
 
     const details = NotificationDetails(

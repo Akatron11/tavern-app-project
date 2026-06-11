@@ -83,4 +83,29 @@ void main() {
     expect(service.lastHour, 8);
     expect(service.lastMinute, 30);
   });
+
+  test('BUG-16: suppressTodayReminder etkinken skipToday ile yeniden kurar',
+      () async {
+    final service = MockNotificationService();
+    final c = await _makeContainer({}, service);
+
+    await c.read(settingsProvider.notifier).suppressTodayReminder();
+
+    expect(service.lastSkipToday, true);
+    expect(service.scheduleCount, greaterThanOrEqualTo(1));
+  });
+
+  test('BUG-16: bildirim kapalıyken suppressTodayReminder hiçbir şey yapmaz',
+      () async {
+    final service = MockNotificationService();
+    final c = await _makeContainer(
+      {'settings.notificationsEnabled': false},
+      service,
+    );
+    final before = service.scheduleCount;
+
+    await c.read(settingsProvider.notifier).suppressTodayReminder();
+
+    expect(service.scheduleCount, before);
+  });
 }

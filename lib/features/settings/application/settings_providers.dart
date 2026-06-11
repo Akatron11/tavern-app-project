@@ -61,6 +61,20 @@ class SettingsNotifier extends Notifier<AppSettings> {
     await _applyNotifications();
   }
 
+  /// BUG-16: Bugün kayıt girildiğinde günlük hatırlatmayı bugünü atlayarak
+  /// yeniden kurar (bildirim kapalıysa hiçbir şey yapmaz).
+  Future<void> suppressTodayReminder() async {
+    if (!state.notificationsEnabled) return;
+    final l10n = lookupAppLocalizations(Locale(state.localeCode));
+    await ref.read(notificationServiceProvider).scheduleDailyReminder(
+          hour: state.notificationHour,
+          minute: state.notificationMinute,
+          title: l10n.appTitle,
+          body: l10n.notificationBody,
+          skipToday: true,
+        );
+  }
+
   Future<void> _applyNotifications() async {
     final service = ref.read(notificationServiceProvider);
     if (state.notificationsEnabled) {

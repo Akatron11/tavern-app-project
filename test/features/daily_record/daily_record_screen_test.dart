@@ -12,8 +12,12 @@ import 'package:gilanli_meyhane/features/daily_record/data/mock_daily_record_rep
 import 'package:gilanli_meyhane/features/daily_record/presentation/daily_record_screen.dart';
 import 'package:gilanli_meyhane/features/daily_record/presentation/widgets/live_totals_card.dart';
 import 'package:gilanli_meyhane/features/staff/application/staff_providers.dart';
+import 'package:gilanli_meyhane/features/settings/application/settings_providers.dart';
+import 'package:gilanli_meyhane/features/settings/data/mock_notification_service.dart';
 import 'package:gilanli_meyhane/features/staff/data/mock_staff_repository.dart';
 import 'package:gilanli_meyhane/features/staff/data/staff_repository.dart';
+import 'package:gilanli_meyhane/shared/providers/preferences_providers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Widget buildApp({
   required DailyRecordRepository dailyRepo,
@@ -107,11 +111,15 @@ void main() {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
 
+    SharedPreferences.setMockInitialValues({});
+    final prefs = await SharedPreferences.getInstance();
     final dailyRepo = MockDailyRecordRepository();
     final container = ProviderContainer(overrides: [
       dailyRecordRepositoryProvider.overrideWithValue(dailyRepo),
       creditSaleRepositoryProvider.overrideWithValue(MockCreditSaleRepository()),
       staffRepositoryProvider.overrideWithValue(MockStaffRepository()),
+      sharedPreferencesProvider.overrideWithValue(prefs),
+      notificationServiceProvider.overrideWithValue(MockNotificationService()),
     ]);
     addTearDown(container.dispose);
 

@@ -12,6 +12,7 @@ class MockNotificationService implements NotificationService {
   int? lastMinute;
   String? lastTitle;
   String? lastBody;
+  bool? lastSkipToday;
 
   @override
   Future<void> init() async {
@@ -30,12 +31,14 @@ class MockNotificationService implements NotificationService {
     required int minute,
     required String title,
     required String body,
+    bool skipToday = false,
   }) async {
     scheduleCount++;
     lastHour = hour;
     lastMinute = minute;
     lastTitle = title;
     lastBody = body;
+    lastSkipToday = skipToday;
   }
 
   @override
