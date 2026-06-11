@@ -101,6 +101,32 @@ class PaymentsController extends AsyncNotifier<void> {
         )));
   }
 
+  /// Gider düzenlenince (açıklama/toplam) remaining ve status yeniden hesaplanır.
+  /// BUG-08: önceden yalnızca totalAmount yazılıyor, kalan eski değerde kalıyordu.
+  Future<void> updateExpense({
+    required PendingExpense expense,
+    required String description,
+    required int totalAmount,
+  }) async {
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(() async {
+      final paid = expense.payments.fold(0, (s, p) => s + p.amount);
+      final newRemaining = totalAmount - paid;
+      final remaining = newRemaining < 0 ? 0 : newRemaining;
+      final status = remaining == 0
+          ? ExpenseStatus.paid
+          : expense.payments.isEmpty
+              ? ExpenseStatus.pending
+              : ExpenseStatus.partial;
+      await _repo.updateExpense(expense.copyWith(
+        description: description,
+        totalAmount: totalAmount,
+        remainingAmount: remaining,
+        status: status,
+      ));
+    });
+  }
+
   Future<void> addExpensePayment(String expenseId, int amount) async {
     state = const AsyncLoading();
     state = await AsyncValue.guard(() async {

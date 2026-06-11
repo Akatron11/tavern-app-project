@@ -88,4 +88,40 @@ void main() {
     expect(e.status, ExpenseStatus.pending);
     expect(e.payments, isEmpty);
   });
+
+  test('BUG-08: ödemesiz gider toplamı düzenlenince remaining anında yeniden hesaplanır',
+      () async {
+    await ctrl().addExpense(
+        description: 'Tedarik', totalAmount: 100000, date: DateTime(2026, 6, 3));
+    final id = repo.expenses.keys.first;
+
+    await ctrl().updateExpense(
+      expense: repo.expenses[id]!,
+      description: 'Tedarik',
+      totalAmount: 60000,
+    );
+
+    final e = repo.expenses[id]!;
+    expect(e.totalAmount, 60000);
+    expect(e.remainingAmount, 60000); // ödeme yapılmadan kalan güncellendi
+    expect(e.status, ExpenseStatus.pending);
+  });
+
+  test('BUG-08: kısmi ödenmiş gider düzenlenince remaining = total - paid',
+      () async {
+    await ctrl().addExpense(
+        description: 'Tadilat', totalAmount: 100000, date: DateTime(2026, 6, 3));
+    final id = repo.expenses.keys.first;
+    await ctrl().addExpensePayment(id, 30000); // kısmi ödeme
+
+    await ctrl().updateExpense(
+      expense: repo.expenses[id]!,
+      description: 'Tadilat',
+      totalAmount: 50000,
+    );
+
+    final e = repo.expenses[id]!;
+    expect(e.remainingAmount, 20000); // 50000 − 30000
+    expect(e.status, ExpenseStatus.partial);
+  });
 }

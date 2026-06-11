@@ -51,11 +51,11 @@ class _ExpenseFormScreenState extends ConsumerState<ExpenseFormScreen> {
     final amount = MoneyInputField.kurusOf(_amountCtrl);
 
     if (_isEdit) {
-      final updated = widget.expense!.copyWith(
-        description: _descCtrl.text.trim(),
-        totalAmount: amount,
-      );
-      await ref.read(paymentRepositoryProvider).updateExpense(updated);
+      await ref.read(paymentsControllerProvider.notifier).updateExpense(
+            expense: widget.expense!,
+            description: _descCtrl.text.trim(),
+            totalAmount: amount,
+          );
       if (mounted) {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text(l10n.expenseUpdated)));
