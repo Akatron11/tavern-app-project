@@ -52,6 +52,12 @@ class MockPaymentRepository implements PaymentRepository {
     _notifyExp();
   }
 
+  @override
+  Future<void> deleteExpense(String id) async {
+    expenses.remove(id);
+    _notifyExp();
+  }
+
   void dispose() {
     _spController.close();
     _expController.close();

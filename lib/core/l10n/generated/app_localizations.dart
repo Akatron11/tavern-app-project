@@ -1045,6 +1045,30 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Tarih'**
   String get date;
+
+  /// Ödendi veresiye silme aksiyonu (YENİ-01)
+  ///
+  /// In tr, this message translates to:
+  /// **'Veresiyeyi Sil'**
+  String get deleteCreditSale;
+
+  /// No description provided for @deleteCreditConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu veresiye kaydını silmek istediğinizden emin misiniz?'**
+  String get deleteCreditConfirmTitle;
+
+  /// Ödendi gider silme aksiyonu (YENİ-02)
+  ///
+  /// In tr, this message translates to:
+  /// **'Gideri Sil'**
+  String get deleteExpense;
+
+  /// No description provided for @deleteExpenseConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu gider kaydını silmek istediğinizden emin misiniz?'**
+  String get deleteExpenseConfirmTitle;
 }
 
 class _AppLocalizationsDelegate

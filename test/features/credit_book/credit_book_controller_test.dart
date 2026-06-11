@@ -109,4 +109,15 @@ void main() {
         customerName: 'Veli', totalAmount: 120000);
     expect(repo.store[id]!.date, DateTime(2026, 3, 15)); // korunur
   });
+
+  test('YENİ-01: deleteSale ödendi kaydı tamamen siler', () async {
+    await ctrl().addSale(
+        customerName: 'Sil', totalAmount: 100000, date: DateTime(2026, 1, 1));
+    final id = repo.store.keys.first;
+    await ctrl().markPaid(id);
+
+    await ctrl().deleteSale(id);
+
+    expect(repo.store, isEmpty);
+  });
 }

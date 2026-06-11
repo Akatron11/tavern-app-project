@@ -497,4 +497,18 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get date => 'Tarih';
+
+  @override
+  String get deleteCreditSale => 'Veresiyeyi Sil';
+
+  @override
+  String get deleteCreditConfirmTitle =>
+      'Bu veresiye kaydını silmek istediğinizden emin misiniz?';
+
+  @override
+  String get deleteExpense => 'Gideri Sil';
+
+  @override
+  String get deleteExpenseConfirmTitle =>
+      'Bu gider kaydını silmek istediğinizden emin misiniz?';
 }

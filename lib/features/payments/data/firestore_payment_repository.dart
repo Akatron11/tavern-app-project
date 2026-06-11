@@ -54,4 +54,7 @@ class FirestorePaymentRepository implements PaymentRepository {
   @override
   Future<void> updateExpense(PendingExpense expense) =>
       _col.doc(expense.id).set(expense.toMap()..remove('id'));
+
+  @override
+  Future<void> deleteExpense(String id) => _col.doc(id).delete();
 }

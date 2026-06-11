@@ -103,4 +103,10 @@ class CreditBookController extends AsyncNotifier<void> {
       await _repo.update(reconciled);
     });
   }
+
+  /// 'Ödendi' veresiyeyi tamamen siler (YENİ-01).
+  Future<void> deleteSale(String id) async {
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(() => _repo.delete(id));
+  }
 }

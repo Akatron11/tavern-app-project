@@ -11,4 +11,7 @@ abstract class PaymentRepository {
   Future<PendingExpense?> getExpenseById(String id);
   Future<String> addExpense(PendingExpense expense);
   Future<void> updateExpense(PendingExpense expense);
+
+  /// Gider kaydını siler (yalnızca 'ödendi' senaryosu — YENİ-02).
+  Future<void> deleteExpense(String id);
 }

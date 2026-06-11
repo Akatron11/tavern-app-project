@@ -174,5 +174,9 @@
   "openSettings": "Settings",
   "genericError": "An error occurred",
   "requiredField": "This field cannot be empty",
-  "date": "Date"
+  "date": "Date",
+  "deleteCreditSale": "Delete Credit Sale",
+  "deleteCreditConfirmTitle": "Are you sure you want to delete this credit record?",
+  "deleteExpense": "Delete Expense",
+  "deleteExpenseConfirmTitle": "Are you sure you want to delete this expense record?"
 }

@@ -186,4 +186,10 @@ class PaymentsController extends AsyncNotifier<void> {
       ));
     });
   }
+
+  /// 'Ödendi' gideri tamamen siler (YENİ-02).
+  Future<void> deleteExpense(String expenseId) async {
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(() => _repo.deleteExpense(expenseId));
+  }
 }

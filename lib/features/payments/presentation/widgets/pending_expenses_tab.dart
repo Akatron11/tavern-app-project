@@ -92,7 +92,7 @@ class PendingExpensesTab extends ConsumerWidget {
                 },
               ),
             ],
-            if (expense.status == ExpenseStatus.paid)
+            if (expense.status == ExpenseStatus.paid) ...[
               ListTile(
                 leading: const Icon(Icons.undo),
                 title: Text(l10n.expenseUndoPaid),
@@ -109,6 +109,25 @@ class PendingExpensesTab extends ConsumerWidget {
                   }
                 },
               ),
+              ListTile(
+                leading: Icon(Icons.delete_outline,
+                    color: Theme.of(context).colorScheme.error),
+                title: Text(l10n.deleteExpense),
+                onTap: () async {
+                  Navigator.of(ctx).pop();
+                  final confirmed = await showConfirmDialog(
+                    context,
+                    title: l10n.deleteExpenseConfirmTitle,
+                    destructive: true,
+                  );
+                  if (confirmed) {
+                    await ref
+                        .read(paymentsControllerProvider.notifier)
+                        .deleteExpense(expense.id);
+                  }
+                },
+              ),
+            ],
           ],
         ),
       ),

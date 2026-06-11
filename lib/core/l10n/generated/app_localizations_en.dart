@@ -496,4 +496,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get date => 'Date';
+
+  @override
+  String get deleteCreditSale => 'Delete Credit Sale';
+
+  @override
+  String get deleteCreditConfirmTitle =>
+      'Are you sure you want to delete this credit record?';
+
+  @override
+  String get deleteExpense => 'Delete Expense';
+
+  @override
+  String get deleteExpenseConfirmTitle =>
+      'Are you sure you want to delete this expense record?';
 }

@@ -124,4 +124,15 @@ void main() {
     expect(e.remainingAmount, 20000); // 50000 − 30000
     expect(e.status, ExpenseStatus.partial);
   });
+
+  test('YENİ-02: deleteExpense ödendi gideri tamamen siler', () async {
+    await ctrl().addExpense(
+        description: 'Sil', totalAmount: 100000, date: DateTime(2026, 6, 3));
+    final id = repo.expenses.keys.first;
+    await ctrl().markExpensePaid(id);
+
+    await ctrl().deleteExpense(id);
+
+    expect(repo.expenses, isEmpty);
+  });
 }

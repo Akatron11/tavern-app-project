@@ -86,7 +86,7 @@ class CreditListScreen extends ConsumerWidget {
                 },
               ),
             ],
-            if (sale.status == CreditStatus.paid)
+            if (sale.status == CreditStatus.paid) ...[
               ListTile(
                 leading: const Icon(Icons.undo),
                 title: Text(l10n.undoPaid),
@@ -103,6 +103,25 @@ class CreditListScreen extends ConsumerWidget {
                   }
                 },
               ),
+              ListTile(
+                leading: Icon(Icons.delete_outline,
+                    color: Theme.of(context).colorScheme.error),
+                title: Text(l10n.deleteCreditSale),
+                onTap: () async {
+                  Navigator.of(ctx).pop();
+                  final confirmed = await showConfirmDialog(
+                    context,
+                    title: l10n.deleteCreditConfirmTitle,
+                    destructive: true,
+                  );
+                  if (confirmed) {
+                    await ref
+                        .read(creditBookControllerProvider.notifier)
+                        .deleteSale(sale.id);
+                  }
+                },
+              ),
+            ],
           ],
         ),
       ),
